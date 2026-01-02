@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Casa Cinderella | Private Pool Malolos</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-navy: #192338;
+            --accent-coral: #FF6F61;
+            --messenger-blue: #0084FF;
+            --waze-blue: #33CCFF;
+            --soft-gray: #f8f9fa;
+            --white: #ffffff;
+            --transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+        }
+
+        /* Base Settings */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body { 
+            font-family: 'Segoe UI', Tahoma, sans-serif; 
+            line-height: 1.5; 
+            color: var(--primary-navy);
+            background-color: var(--white);
+        }
+
+        /* Inter Font for UI */
+        nav a, .btn, .floating-messenger, .hours, .footer-logo, .logo, h2, h3, .inclusion-pill {
+            font-family: 'Inter', sans-serif;
+            letter-spacing: 1px;
+            font-weight: 300;
+        }
+
+        header {
+            position: sticky; top: 0;
+            background: var(--primary-navy);
+            color: white; padding: 0.7rem 5%;
+            display: flex; justify-content: space-between; align-items: center;
+            z-index: 1000;
+        }
+        .logo { font-weight: 600; font-size: 1rem; letter-spacing: 2px; }
+        nav a { color: rgba(255,255,255,0.9); text-decoration: none; margin-left: 15px; font-size: 0.65rem; text-transform: uppercase; }
+
+        .floating-messenger {
+            position: fixed; bottom: 25px; right: 25px;
+            background: var(--messenger-blue); color: white;
+            padding: 12px 24px; border-radius: 50px; text-decoration: none;
+            font-size: 0.75rem; box-shadow: 0 4px 15px rgba(0,0,0,0.2); z-index: 2000;
+        }
+
+        section { padding: 50px 5%; }
+        .section-title { text-align: center; margin-bottom: 30px; }
+        .section-title h2 { color: var(--primary-navy); font-size: 1.4rem; text-transform: uppercase; letter-spacing: 3px; }
+
+        /* Rates */
+        .rates-grid {
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 15px; max-width: 1000px; margin: 0 auto;
+        }
+        .rate-card {
+            background: var(--soft-gray); border-radius: 12px; padding: 25px 15px;
+            text-align: center; border: 1px solid #eee; position: relative;
+        }
+        .price { font-size: 2rem; font-weight: bold; color: var(--accent-coral); display: block; }
+
+        /* Inclusion Pills */
+        .pill-container {
+            display: flex; justify-content: center; flex-wrap: wrap;
+            gap: 8px; max-width: 900px; margin: 0 auto;
+        }
+        .inclusion-pill {
+            background: var(--white); border: 1px solid #ddd;
+            color: var(--primary-navy); padding: 8px 16px; border-radius: 50px;
+            font-size: 0.7rem; text-transform: uppercase;
+        }
+
+        /* INSTAGRAM STYLE CAROUSEL */
+        .carousel-container {
+            max-width: 100%; margin: 0 auto 40px;
+        }
+        .carousel-header {
+            font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px;
+            margin-bottom: 12px; color: var(--primary-navy); font-weight: 600;
+            padding-left: 5px;
+        }
+        .carousel-wrapper {
+            display: flex;
+            overflow-x: auto;
+            scroll-snap-type: x mandatory; /* The "Instagram" Snap */
+            gap: 10px;
+            padding: 0 5px 15px;
+            scrollbar-width: none;
+        }
+        .carousel-wrapper::-webkit-scrollbar { display: none; }
+
+        .carousel-slide {
+            flex: 0 0 80%; /* Shows a peek of the next photo */
+            scroll-snap-align: center;
+            aspect-ratio: 1 / 1; /* Square Instagram look */
+            border-radius: 8px;
+            overflow: hidden;
+            background: #f0f0f0;
+        }
+        .carousel-slide img { width: 100%; height: 100%; object-fit: cover; }
+
+        @media (min-width: 768px) {
+            .carousel-slide { flex: 0 0 300px; } /* Fixed square size on desktop */
+            .carousel-wrapper { justify-content: center; }
+        }
+
+        /* Booking Info */
+        .info-container {
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px; max-width: 900px; margin: 0 auto;
+        }
+        .info-box {
+            background: #fff; padding: 30px; border-radius: 15px;
+            border: 1px solid #eee; text-align: center;
+        }
+
+        footer { background: var(--primary-navy); color: rgba(255,255,255,0.7); padding: 30px 5%; text-align: center; }
+    </style>
+</head>
+<body>
+
+    <a href="https://www.facebook.com/casacinderella/" target="_blank" class="floating-messenger">💬 Chat on Messenger</a>
+
+    <header>
+        <div class="logo">CASA CINDERELLA</div>
+        <nav>
+            <a href="#rates">Rates</a>
+            <a href="#inclusions">Inclusions</a>
+            <a href="#gallery">Gallery</a>
+        </nav>
+    </header>
+
+    <div class="hero" style="height: 40vh; background: url('https://i.postimg.cc/3wScgPqb/IMG-8226-2.png') center/cover no-repeat;"></div>
+
+    <section id="rates">
+        <div class="section-title">
+            <h2>Package Rates</h2>
+        </div>
+        <div class="rates-grid">
+            <div class="rate-card">
+                <span style="font-size: 0.65rem;">DAY STAY</span>
+                <span class="price">₱7,999</span>
+                <p style="font-size: 0.7rem;">08:00 AM — 06:00 PM</p>
+            </div>
+            <div class="rate-card">
+                <span style="font-size: 0.65rem;">NIGHT STAY</span>
+                <span class="price">₱8,999</span>
+                <p style="font-size: 0.7rem;">07:00 PM — 05:00 AM</p>
+            </div>
+            <div class="rate-card">
+                <div style="position: absolute; top: -10px; left: 50%; transform: translateX(-50%); background: var(--accent-coral); color: white; padding: 3px 10px; font-size: 0.55rem; border-radius: 20px; font-weight: bold;">POPULAR</div>
+                <span style="font-size: 0.65rem;">22-HOUR RETREAT</span>
+                <span class="price">₱14,999</span>
+                <p style="font-size: 0.7rem;">Full Staycation</p>
+            </div>
+        </div>
+        <p style="text-align: center; margin-top: 20px; font-size: 0.7rem; color: #777;">** Package is subject to change without prior notice</p>
+        <p style="text-align: center; font-size: 0.75rem; color: var(--primary-navy); font-weight: 600; margin-top: 5px;">Additional rooms available for a fee (Inquire for details).</p>
+    </section>
+
+    <section id="inclusions" style="background-color: var(--soft-gray);">
+        <div class="section-title">
+            <h2>What's Included</h2>
+        </div>
+        <div class="pill-container">
+            <div class="inclusion-pill">Private Pool</div>
+            <div class="inclusion-pill">1 Big Room (4 Beds)</div>
+            <div class="inclusion-pill">1 Big Gazebo</div>
+            <div class="inclusion-pill">1 Small Gazebo</div>
+            <div class="inclusion-pill">Outdoor Sink & Grill</div>
+            <div class="inclusion-pill">Outdoor Shower & Toilet</div>
+            <div class="inclusion-pill">Parking</div>
+            <div class="inclusion-pill">Night Lighting</div>
+        </div>
+    </section>
+
+    <section id="gallery">
+        <div class="section-title">
+            <h2>Resort Gallery</h2>
+            <p style="font-size: 0.75rem; color: #999;">Swipe to browse</p>
+        </div>
+
+        <div class="carousel-container">
+            <h3 class="carousel-header">Pool & Atmosphere</h3>
+            <div class="carousel-wrapper">
+                <div class="carousel-slide"><img src="https://i.postimg.cc/c1hGHbxb/IMG-8204-2.png" alt="Pool View 1"></div>
+                <div class="carousel-slide"><img src="https://i.postimg.cc/3wScgPqb/IMG-8226-2.png" alt="Pool View 2"></div>
+                </div>
+        </div>
+
+        <div class="carousel-container">
+            <h3 class="carousel-header">Rooms & Relaxation</h3>
+            <div class="carousel-wrapper">
+                <div class="carousel-slide"><img src="https://i.postimg.cc/B6vG3TrN/796d998602ae5f030185c220208da79c.jpg" alt="Room Interior"></div>
+                <div class="carousel-slide"><img src="https://i.postimg.cc/Nfkb639r/IMG_8199_2.png" alt="Big Gazebo"></div>
+                <div class="carousel-slide"><img src="https://i.postimg.cc/6pLrJnL7/r35Z-4Gv.jpg" alt="Small Gazebo"></div>
+            </div>
+        </div>
+
+        <div class="carousel-container">
+            <h3 class="carousel-header">Grounds & Parking</h3>
+            <div class="carousel-wrapper">
+                <div class="carousel-slide"><img src="https://i.postimg.cc/gkcG2Cfv/IMG-8271-3.png" alt="Secure Parking"></div>
+            </div>
+        </div>
+    </section>
+
+    <section id="payment" style="background-color: var(--soft-gray);">
+        <div class="info-container">
+            <div class="info-box">
+                <h3 style="text-transform: uppercase; letter-spacing: 2px; font-size: 0.8rem; margin-bottom: 15px;">Booking</h3>
+                <img src="https://i.postimg.cc/3xn1Hv2F/we-accept-gcash.jpg" alt="GCash" style="width: 160px; margin-bottom: 10px; border-radius: 8px;">
+                <p style="font-size: 0.75rem; font-weight: 600; color: var(--accent-coral);">50% Downpayment Required</p>
+                <p style="font-size: 0.7rem; color: #666; margin-top: 5px;">Message us on Messenger to book.</p>
+            </div>
+
+            <div id="location" class="info-box">
+                <h3 style="text-transform: uppercase; letter-spacing: 2px; font-size: 0.8rem; margin-bottom: 15px;">Location</h3>
+                <p style="font-size: 0.8rem; margin-bottom: 15px;">98 Garville Subd, Malolos, Bulacan</p>
+                <a href="https://waze.com/ul?q=98%20Garville%20Subd%20Malolos%20Bulacan" target="_blank" style="background: var(--waze-blue); color: white; padding: 10px 20px; border-radius: 50px; text-decoration: none; font-size: 0.7rem; display: inline-block;">Open Waze Map</a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-logo">CASA CINDERELLA</div>
+        <p style="font-size: 0.65rem; margin-top: 10px;">&copy; 2026 PRIVATE RESORT EXPERIENCE</p>
+    </footer>
+
+</body>
+</html>
