@@ -4,233 +4,235 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Casa Cinderella | Private Pool Malolos</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;600&display=swap" rel="stylesheet">
     <style>
         :root {
-            --primary-navy: #192338;
+            --bg-color: #121826;
+            --accent-blue: #4cc9f0;
             --accent-coral: #FF6F61;
-            --messenger-blue: #0084FF;
-            --waze-blue: #33CCFF;
-            --soft-gray: #f8f9fa;
+            --glass-white: rgba(255, 255, 255, 0.03);
+            --glass-border: rgba(255, 255, 255, 0.08);
             --white: #ffffff;
+            --soft-silver: #94a3b8;
             --transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
         }
 
-        /* Base Settings */
         * { margin: 0; padding: 0; box-sizing: border-box; }
         html { scroll-behavior: smooth; }
+
         body { 
-            font-family: 'Segoe UI', Tahoma, sans-serif; 
-            line-height: 1.5; 
-            color: var(--primary-navy);
-            background-color: var(--white);
+            font-family: 'Inter', sans-serif; 
+            background-color: var(--bg-color);
+            color: var(--white);
+            overflow-x: hidden;
         }
 
-        /* Inter Font for UI */
-        nav a, .btn, .floating-messenger, .hours, .footer-logo, .logo, h2, h3, .inclusion-pill {
-            font-family: 'Inter', sans-serif;
-            letter-spacing: 1px;
-            font-weight: 300;
+        body::before {
+            content: ''; position: fixed; top: -10%; left: -10%; width: 50vw; height: 50vw;
+            background: radial-gradient(circle, rgba(76, 201, 240, 0.05) 0%, transparent 70%);
+            z-index: -1;
+        }
+        body::after {
+            content: ''; position: fixed; bottom: -10%; right: -10%; width: 40vw; height: 40vw;
+            background: radial-gradient(circle, rgba(255, 111, 97, 0.03) 0%, transparent 70%);
+            z-index: -1;
         }
 
+        /* Frosted Glass Nav */
         header {
-            position: sticky; top: 0;
-            background: var(--primary-navy);
-            color: white; padding: 0.7rem 5%;
+            position: sticky; top: 0; z-index: 1000;
             display: flex; justify-content: space-between; align-items: center;
-            z-index: 1000;
+            padding: 1.2rem 5%;
+            background: rgba(255, 255, 255, 0.01) !important;
+            backdrop-filter: blur(25px) saturate(180%);
+            -webkit-backdrop-filter: blur(25px) saturate(180%);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
         }
-        .logo { font-weight: 600; font-size: 1rem; letter-spacing: 2px; }
-        nav a { color: rgba(255,255,255,0.9); text-decoration: none; margin-left: 15px; font-size: 0.65rem; text-transform: uppercase; }
+
+        .logo { font-weight: 600; font-size: 0.9rem; letter-spacing: 5px; text-transform: uppercase; color: #fff; }
+        nav a { color: rgba(255,255,255,0.85); text-decoration: none; margin-left: 20px; font-size: 0.65rem; text-transform: uppercase; letter-spacing: 2px; font-weight: 400; transition: var(--transition); }
+        nav a:hover { color: var(--accent-coral); transform: translateY(-2px); }
+
+        .hero { 
+            height: 55vh; width: 100%; 
+            background: linear-gradient(to bottom, transparent 30%, var(--bg-color) 100%), 
+                        url('https://i.postimg.cc/HnPg8xyv/IMG-8215-2.png') center/cover no-repeat; 
+        }
 
         .floating-messenger {
-            position: fixed; bottom: 25px; right: 25px;
-            background: var(--messenger-blue); color: white;
-            padding: 12px 24px; border-radius: 50px; text-decoration: none;
-            font-size: 0.75rem; box-shadow: 0 4px 15px rgba(0,0,0,0.2); z-index: 2000;
+            position: fixed; bottom: 30px; right: 30px;
+            background: var(--accent-blue); color: #121826;
+            padding: 14px 28px; border-radius: 50px; text-decoration: none;
+            font-size: 0.75rem; font-weight: 600; letter-spacing: 1px;
+            box-shadow: 0 10px 30px rgba(76, 201, 240, 0.2);
+            z-index: 2000; transition: var(--transition);
+        }
+        .floating-messenger:hover { transform: translateY(-5px); background: var(--white); box-shadow: 0 15px 40px rgba(76, 201, 240, 0.4); }
+
+        section { padding: 40px 10%; position: relative; }
+        .section-title h2 { text-align: center; font-size: 1.4rem; font-weight: 200; text-transform: uppercase; letter-spacing: 6px; margin-bottom: 50px; }
+
+        /* Card Hover Logic */
+        .glass-card { 
+            background: var(--glass-white); 
+            backdrop-filter: blur(25px); 
+            border: 1px solid var(--glass-border); 
+            border-radius: 12px; 
+            transition: var(--transition);
+            position: relative;
+        }
+        .glass-card:hover { 
+            background: rgba(255, 255, 255, 0.08);
+            border-color: rgba(76, 201, 240, 0.4); 
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
         }
 
-        section { padding: 50px 5%; }
-        .section-title { text-align: center; margin-bottom: 30px; }
-        .section-title h2 { color: var(--primary-navy); font-size: 1.4rem; text-transform: uppercase; letter-spacing: 3px; }
+        /* 3-Column Rates */
+        .rates-grid { 
+            display: grid; 
+            grid-template-columns: repeat(3, 1fr); 
+            gap: 12px; 
+            max-width: 1100px; 
+            margin: 20px auto 0; 
+        }
+        .rate-card { padding: 35px 10px; text-align: center; overflow: visible; }
+        .price { font-size: 1.8rem; font-weight: 600; color: var(--accent-blue); display: block; margin: 5px 0; transition: var(--transition); }
+        .rate-card:hover .price { transform: scale(1.1); text-shadow: 0 0 15px rgba(76, 201, 240, 0.5); }
 
-        /* Rates */
-        .rates-grid {
-            display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 15px; max-width: 1000px; margin: 0 auto;
-        }
-        .rate-card {
-            background: var(--soft-gray); border-radius: 12px; padding: 25px 15px;
-            text-align: center; border: 1px solid #eee; position: relative;
-        }
-        .price { font-size: 2rem; font-weight: bold; color: var(--accent-coral); display: block; }
-
-        /* Inclusion Pills */
-        .pill-container {
-            display: flex; justify-content: center; flex-wrap: wrap;
-            gap: 8px; max-width: 900px; margin: 0 auto;
-        }
-        .inclusion-pill {
-            background: var(--white); border: 1px solid #ddd;
-            color: var(--primary-navy); padding: 8px 16px; border-radius: 50px;
-            font-size: 0.7rem; text-transform: uppercase;
+        .popular-badge {
+            position: absolute; top: -10px; left: 50%; transform: translateX(-50%);
+            background: var(--bg-color); border: 1px solid var(--accent-coral); color: var(--accent-coral);
+            padding: 3px 10px; font-size: 0.5rem; border-radius: 4px; letter-spacing: 1px;
+            text-transform: uppercase; font-weight: 600; z-index: 10;
         }
 
-        /* INSTAGRAM STYLE CAROUSEL */
-        .carousel-container {
-            max-width: 100%; margin: 0 auto 40px;
-        }
-        .carousel-header {
-            font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px;
-            margin-bottom: 12px; color: var(--primary-navy); font-weight: 600;
-            padding-left: 5px;
-        }
-        .carousel-wrapper {
-            display: flex;
-            overflow-x: auto;
-            scroll-snap-type: x mandatory; /* The "Instagram" Snap */
-            gap: 10px;
-            padding: 0 5px 15px;
-            scrollbar-width: none;
-        }
-        .carousel-wrapper::-webkit-scrollbar { display: none; }
+        /* Inclusions Hover */
+        .amenities-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px; max-width: 1200px; margin: 0 auto; }
+        .amenity-card { overflow: hidden; }
+        .img-container { height: 200px; overflow: hidden; }
+        .img-container img { width: 100%; height: 100%; object-fit: cover; opacity: 0.8; transition: var(--transition); }
+        .glass-card:hover img { opacity: 1; transform: scale(1.05); }
 
-        .carousel-slide {
-            flex: 0 0 80%; /* Shows a peek of the next photo */
-            scroll-snap-align: center;
-            aspect-ratio: 1 / 1; /* Square Instagram look */
-            border-radius: 8px;
-            overflow: hidden;
-            background: #f0f0f0;
-        }
-        .carousel-slide img { width: 100%; height: 100%; object-fit: cover; }
+        .amenity-info { padding: 25px; }
+        .amenity-info h4 { font-weight: 400; font-size: 0.85rem; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 10px; }
+        .glass-card:hover h4 { color: var(--accent-blue); }
+        .amenity-info p { font-size: 0.75rem; color: var(--soft-silver); line-height: 1.7; font-weight: 300; }
 
-        @media (min-width: 768px) {
-            .carousel-slide { flex: 0 0 300px; } /* Fixed square size on desktop */
-            .carousel-wrapper { justify-content: center; }
-        }
+        .badge-note { display: inline-block; border: 1px solid rgba(255, 111, 97, 0.3); color: var(--accent-coral); padding: 5px 12px; border-radius: 4px; font-size: 0.65rem; margin-top: 15px; text-transform: uppercase; letter-spacing: 1px; }
 
-        /* Booking Info */
-        .info-container {
-            display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 20px; max-width: 900px; margin: 0 auto;
-        }
-        .info-box {
-            background: #fff; padding: 30px; border-radius: 15px;
-            border: 1px solid #eee; text-align: center;
-        }
+        /* Booking/Payment */
+        .info-container { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 25px; max-width: 1000px; margin: 20px auto; }
+        .info-box { padding: 40px; text-align: center; overflow: visible; }
+        .btn-waze { border: 1px solid #33ccff; color: #33ccff; padding: 12px 30px; border-radius: 4px; text-decoration: none; font-size: 0.65rem; letter-spacing: 2px; text-transform: uppercase; display: inline-block; margin-top: 20px; transition: var(--transition); }
+        .btn-waze:hover { background: #33ccff; color: white; transform: translateY(-3px); box-shadow: 0 10px 20px rgba(51, 204, 255, 0.2); }
 
-        footer { background: var(--primary-navy); color: rgba(255,255,255,0.7); padding: 30px 5%; text-align: center; }
+        footer { padding: 60px 5%; text-align: center; color: rgba(255,255,255,0.1); font-size: 0.6rem; letter-spacing: 3px; }
+
+        @media (max-width: 768px) {
+            header { flex-direction: column; padding: 15px; gap: 10px; }
+            section { padding: 30px 5%; }
+            .hero { height: 35vh; }
+            .price { font-size: 1.1rem; }
+            .rate-card { padding: 20px 5px; }
+        }
     </style>
 </head>
 <body>
 
-    <a href="https://www.facebook.com/casacinderella/" target="_blank" class="floating-messenger">💬 Chat on Messenger</a>
-
     <header>
-        <div class="logo">CASA CINDERELLA</div>
+        <div class="logo">Casa Cinderella</div>
         <nav>
-            <a href="#rates">Rates</a>
-            <a href="#inclusions">Inclusions</a>
-            <a href="#gallery">Gallery</a>
+            <a href="#rates">Packages</a>
+            <a href="#amenities">Inclusions</a>
+            <a href="#payment">Booking</a>
         </nav>
     </header>
 
-    <div class="hero" style="height: 40vh; background: url('https://i.postimg.cc/3wScgPqb/IMG-8226-2.png') center/cover no-repeat;"></div>
+    <div class="hero"></div>
 
     <section id="rates">
-        <div class="section-title">
-            <h2>Package Rates</h2>
-        </div>
+        <div class="section-title"><h2>Packages</h2></div>
         <div class="rates-grid">
-            <div class="rate-card">
-                <span style="font-size: 0.65rem;">DAY STAY</span>
+            <div class="glass-card rate-card">
+                <span style="font-size: 0.5rem; color: var(--soft-silver);">DAY STAY</span>
                 <span class="price">₱7,999</span>
-                <p style="font-size: 0.7rem;">08:00 AM — 06:00 PM</p>
             </div>
-            <div class="rate-card">
-                <span style="font-size: 0.65rem;">NIGHT STAY</span>
+            <div class="glass-card rate-card">
+                <span style="font-size: 0.5rem; color: var(--soft-silver);">NIGHT STAY</span>
                 <span class="price">₱8,999</span>
-                <p style="font-size: 0.7rem;">07:00 PM — 05:00 AM</p>
             </div>
-            <div class="rate-card">
-                <div style="position: absolute; top: -10px; left: 50%; transform: translateX(-50%); background: var(--accent-coral); color: white; padding: 3px 10px; font-size: 0.55rem; border-radius: 20px; font-weight: bold;">POPULAR</div>
-                <span style="font-size: 0.65rem;">22-HOUR RETREAT</span>
+            <div class="glass-card rate-card">
+                <div class="popular-badge">22 Hours</div>
+                <span style="font-size: 0.5rem; color: var(--soft-silver);">RETREAT</span>
                 <span class="price">₱14,999</span>
-                <p style="font-size: 0.7rem;">Full Staycation</p>
             </div>
         </div>
-        <p style="text-align: center; margin-top: 20px; font-size: 0.7rem; color: #777;">** Package is subject to change without prior notice</p>
-        <p style="text-align: center; font-size: 0.75rem; color: var(--primary-navy); font-weight: 600; margin-top: 5px;">Additional rooms available for a fee (Inquire for details).</p>
     </section>
 
-    <section id="inclusions" style="background-color: var(--soft-gray);">
-        <div class="section-title">
-            <h2>What's Included</h2>
-        </div>
-        <div class="pill-container">
-            <div class="inclusion-pill">Private Pool</div>
-            <div class="inclusion-pill">1 Big Room (4 Beds)</div>
-            <div class="inclusion-pill">1 Big Gazebo</div>
-            <div class="inclusion-pill">1 Small Gazebo</div>
-            <div class="inclusion-pill">Outdoor Sink & Grill</div>
-            <div class="inclusion-pill">Outdoor Shower & Toilet</div>
-            <div class="inclusion-pill">Parking</div>
-            <div class="inclusion-pill">Night Lighting</div>
-        </div>
-    </section>
-
-    <section id="gallery">
-        <div class="section-title">
-            <h2>Resort Gallery</h2>
-            <p style="font-size: 0.75rem; color: #999;">Swipe to browse</p>
-        </div>
-
-        <div class="carousel-container">
-            <h3 class="carousel-header">Pool & Atmosphere</h3>
-            <div class="carousel-wrapper">
-                <div class="carousel-slide"><img src="https://i.postimg.cc/c1hGHbxb/IMG-8204-2.png" alt="Pool View 1"></div>
-                <div class="carousel-slide"><img src="https://i.postimg.cc/3wScgPqb/IMG-8226-2.png" alt="Pool View 2"></div>
+    <section id="amenities">
+        <div class="section-title"><h2>Inclusions</h2></div>
+        <div class="amenities-grid">
+            <div class="glass-card amenity-card">
+                <div class="img-container"><img src="https://i.postimg.cc/c1hGHbxb/IMG-8204-2.png" alt="Pool"></div>
+                <div class="amenity-info">
+                    <h4>Private Pool Area</h4>
+                    <p>Exclusive pool with atmospheric night lighting. Features clean outdoor facilities including a shower and CR.</p>
                 </div>
-        </div>
-
-        <div class="carousel-container">
-            <h3 class="carousel-header">Rooms & Relaxation</h3>
-            <div class="carousel-wrapper">
-                <div class="carousel-slide"><img src="https://i.postimg.cc/B6vG3TrN/796d998602ae5f030185c220208da79c.jpg" alt="Room Interior"></div>
-                <div class="carousel-slide"><img src="https://i.postimg.cc/Nfkb639r/IMG_8199_2.png" alt="Big Gazebo"></div>
-                <div class="carousel-slide"><img src="https://i.postimg.cc/6pLrJnL7/r35Z-4Gv.jpg" alt="Small Gazebo"></div>
             </div>
-        </div>
-
-        <div class="carousel-container">
-            <h3 class="carousel-header">Grounds & Parking</h3>
-            <div class="carousel-wrapper">
-                <div class="carousel-slide"><img src="https://i.postimg.cc/gkcG2Cfv/IMG-8271-3.png" alt="Secure Parking"></div>
+            <div class="glass-card amenity-card">
+                <div class="img-container"><img src="https://i.postimg.cc/B6vG3TrN/796d998602ae5f030185c220208da79c.jpg" alt="Room"></div>
+                <div class="amenity-info">
+                    <h4>Main Guest Room</h4>
+                    <p>Comfortable lodging with 2 double deckers, TV, and refrigerator for your essentials.</p>
+                    <span class="badge-note">Additional rooms available</span>
+                </div>
+            </div>
+            <div class="glass-card amenity-card">
+                <div class="img-container"><img src="https://i.postimg.cc/Nfkb639r/IMG_8199_2.png" alt="Gazebo"></div>
+                <div class="amenity-info">
+                    <h4>Alfresco Dining</h4>
+                    <p>Large gazebo with group seating. Includes a dedicated outdoor sink and grill for BBQ preparations.</p>
+                </div>
+            </div>
+            <div class="glass-card amenity-card">
+                <div class="img-container"><img src="https://i.postimg.cc/6pLrJnL7/r35Z-4Gv.jpg" alt="Small Gazebo"></div>
+                <div class="amenity-info">
+                    <h4>Lounge Spot</h4>
+                    <p>A secondary intimate gazebo perfect for relaxing or having afternoon coffee by the pool.</p>
+                </div>
+            </div>
+            <div class="glass-card amenity-card">
+                <div class="img-container"><img src="https://i.postimg.cc/gkcG2Cfv/IMG-8271-3.png" alt="Parking"></div>
+                <div class="amenity-info">
+                    <h4>Gated Parking</h4>
+                    <p>Secure on-site parking for your group's vehicles, ensuring a worry-free staycation.</p>
+                </div>
             </div>
         </div>
     </section>
 
-    <section id="payment" style="background-color: var(--soft-gray);">
+    <section id="payment">
+        <div class="section-title"><h2>Ready to Book?</h2></div>
         <div class="info-container">
-            <div class="info-box">
-                <h3 style="text-transform: uppercase; letter-spacing: 2px; font-size: 0.8rem; margin-bottom: 15px;">Booking</h3>
-                <img src="https://i.postimg.cc/3xn1Hv2F/we-accept-gcash.jpg" alt="GCash" style="width: 160px; margin-bottom: 10px; border-radius: 8px;">
-                <p style="font-size: 0.75rem; font-weight: 600; color: var(--accent-coral);">50% Downpayment Required</p>
-                <p style="font-size: 0.7rem; color: #666; margin-top: 5px;">Message us on Messenger to book.</p>
+            <div class="glass-card info-box">
+                <h3 style="text-transform: uppercase; letter-spacing: 4px; font-size: 0.75rem; margin-bottom: 25px; font-weight: 300; color: var(--soft-silver);">Reservation</h3>
+                <img src="https://i.postimg.cc/3xn1Hv2F/we-accept-gcash.jpg" alt="GCash" style="width: 130px; margin-bottom: 20px; border-radius: 4px; opacity: 0.7;">
+                <p style="font-size: 0.75rem; color: var(--accent-coral); margin-bottom: 5px; text-transform: uppercase; letter-spacing: 1px;">50% Downpayment</p>
+                <p style="font-size: 0.7rem; color: var(--soft-silver);">Secure your booking via Messenger.</p>
             </div>
-
-            <div id="location" class="info-box">
-                <h3 style="text-transform: uppercase; letter-spacing: 2px; font-size: 0.8rem; margin-bottom: 15px;">Location</h3>
-                <p style="font-size: 0.8rem; margin-bottom: 15px;">98 Garville Subd, Malolos, Bulacan</p>
-                <a href="https://waze.com/ul?q=98%20Garville%20Subd%20Malolos%20Bulacan" target="_blank" style="background: var(--waze-blue); color: white; padding: 10px 20px; border-radius: 50px; text-decoration: none; font-size: 0.7rem; display: inline-block;">Open Waze Map</a>
+            <div id="location" class="glass-card info-box">
+                <h3 style="text-transform: uppercase; letter-spacing: 4px; font-size: 0.75rem; margin-bottom: 25px; font-weight: 300; color: var(--soft-silver);">The Location</h3>
+                <p style="font-size: 0.8rem; color: var(--white); font-weight: 300; letter-spacing: 1px;">98 Garville Subd, Malolos, Bulacan</p>
+                <a href="https://waze.com/ul?q=98%20Garville%20Subd%20Malolos%20Bulacan" target="_blank" class="btn-waze">Navigate</a>
             </div>
         </div>
     </section>
+
+    <a href="https://www.facebook.com/casacinderella/" target="_blank" class="floating-messenger">CHAT WITH US</a>
 
     <footer>
-        <div class="footer-logo">CASA CINDERELLA</div>
-        <p style="font-size: 0.65rem; margin-top: 10px;">&copy; 2026 PRIVATE RESORT EXPERIENCE</p>
+        <p>CASA CINDERELLA PRIVATE RESORT • MALOLOS BULACAN</p>
     </footer>
 
 </body>
