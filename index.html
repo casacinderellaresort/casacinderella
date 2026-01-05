@@ -3,237 +3,353 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Casa Cinderella | Private Pool Malolos</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;600&display=swap" rel="stylesheet">
+    <title>Casa Cinderella</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
-        :root {
-            --bg-color: #121826;
-            --accent-blue: #4cc9f0;
-            --accent-coral: #FF6F61;
-            --glass-white: rgba(255, 255, 255, 0.03);
-            --glass-border: rgba(255, 255, 255, 0.08);
-            --white: #ffffff;
-            --soft-silver: #94a3b8;
-            --transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
-        }
-
-        * { margin: 0; padding: 0; box-sizing: border-box; }
+    
+        :root { --navy: #0f172a; --dark-gray: #1f2937; }
         html { scroll-behavior: smooth; }
-
-        body { 
-            font-family: 'Inter', sans-serif; 
-            background-color: var(--bg-color);
-            color: var(--white);
-            overflow-x: hidden;
+        .hero-overlay {
+            background: linear-gradient(rgba(15, 23, 42, 0.75), rgba(15, 23, 42, 0.75)), 
+                        url('https://i.postimg.cc/ZKvDrWCj/1d3dae9ca95228b0df542be7c1a1980e.jpg');
+            background-size: cover;
+            background-position: center;
         }
-
-        body::before {
-            content: ''; position: fixed; top: -10%; left: -10%; width: 50vw; height: 50vw;
-            background: radial-gradient(circle, rgba(76, 201, 240, 0.05) 0%, transparent 70%);
-            z-index: -1;
-        }
-        body::after {
-            content: ''; position: fixed; bottom: -10%; right: -10%; width: 40vw; height: 40vw;
-            background: radial-gradient(circle, rgba(255, 111, 97, 0.03) 0%, transparent 70%);
-            z-index: -1;
-        }
-
-        /* Frosted Glass Nav */
-        header {
-            position: sticky; top: 0; z-index: 1000;
-            display: flex; justify-content: space-between; align-items: center;
-            padding: 1.2rem 5%;
-            background: rgba(255, 255, 255, 0.01) !important;
-            backdrop-filter: blur(25px) saturate(180%);
-            -webkit-backdrop-filter: blur(25px) saturate(180%);
-            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-        }
-
-        .logo { font-weight: 600; font-size: 0.9rem; letter-spacing: 5px; text-transform: uppercase; color: #fff; }
-        nav a { color: rgba(255,255,255,0.85); text-decoration: none; margin-left: 20px; font-size: 0.65rem; text-transform: uppercase; letter-spacing: 2px; font-weight: 400; transition: var(--transition); }
-        nav a:hover { color: var(--accent-coral); transform: translateY(-2px); }
-
-        .hero { 
-            height: 55vh; width: 100%; 
-            background: linear-gradient(to bottom, transparent 30%, var(--bg-color) 100%), 
-                        url('https://i.postimg.cc/HnPg8xyv/IMG-8215-2.png') center/cover no-repeat; 
-        }
-
-        .floating-messenger {
-            position: fixed; bottom: 30px; right: 30px;
-            background: var(--accent-blue); color: #121826;
-            padding: 14px 28px; border-radius: 50px; text-decoration: none;
-            font-size: 0.75rem; font-weight: 600; letter-spacing: 1px;
-            box-shadow: 0 10px 30px rgba(76, 201, 240, 0.2);
-            z-index: 2000; transition: var(--transition);
-        }
-        .floating-messenger:hover { transform: translateY(-5px); background: var(--white); box-shadow: 0 15px 40px rgba(76, 201, 240, 0.4); }
-
-        section { padding: 40px 10%; position: relative; }
-        .section-title h2 { text-align: center; font-size: 1.4rem; font-weight: 200; text-transform: uppercase; letter-spacing: 6px; margin-bottom: 50px; }
-
-        /* Card Hover Logic */
-        .glass-card { 
-            background: var(--glass-white); 
-            backdrop-filter: blur(25px); 
-            border: 1px solid var(--glass-border); 
-            border-radius: 12px; 
-            transition: var(--transition);
-            position: relative;
-        }
-        .glass-card:hover { 
-            background: rgba(255, 255, 255, 0.08);
-            border-color: rgba(76, 201, 240, 0.4); 
-            transform: translateY(-8px);
-            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
-        }
-
-        /* 3-Column Rates */
-        .rates-grid { 
-            display: grid; 
-            grid-template-columns: repeat(3, 1fr); 
-            gap: 12px; 
-            max-width: 1100px; 
-            margin: 20px auto 0; 
-        }
-        .rate-card { padding: 35px 10px; text-align: center; overflow: visible; }
-        .price { font-size: 1.8rem; font-weight: 600; color: var(--accent-blue); display: block; margin: 5px 0; transition: var(--transition); }
-        .rate-card:hover .price { transform: scale(1.1); text-shadow: 0 0 15px rgba(76, 201, 240, 0.5); }
-
-        .popular-badge {
-            position: absolute; top: -10px; left: 50%; transform: translateX(-50%);
-            background: var(--bg-color); border: 1px solid var(--accent-coral); color: var(--accent-coral);
-            padding: 3px 10px; font-size: 0.5rem; border-radius: 4px; letter-spacing: 1px;
-            text-transform: uppercase; font-weight: 600; z-index: 10;
-        }
-
-        /* Inclusions Hover */
-        .amenities-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px; max-width: 1200px; margin: 0 auto; }
-        .amenity-card { overflow: hidden; }
-        .img-container { height: 200px; overflow: hidden; }
-        .img-container img { width: 100%; height: 100%; object-fit: cover; opacity: 0.8; transition: var(--transition); }
-        .glass-card:hover img { opacity: 1; transform: scale(1.05); }
-
-        .amenity-info { padding: 25px; }
-        .amenity-info h4 { font-weight: 400; font-size: 0.85rem; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 10px; }
-        .glass-card:hover h4 { color: var(--accent-blue); }
-        .amenity-info p { font-size: 0.75rem; color: var(--soft-silver); line-height: 1.7; font-weight: 300; }
-
-        .badge-note { display: inline-block; border: 1px solid rgba(255, 111, 97, 0.3); color: var(--accent-coral); padding: 5px 12px; border-radius: 4px; font-size: 0.65rem; margin-top: 15px; text-transform: uppercase; letter-spacing: 1px; }
-
-        /* Booking/Payment */
-        .info-container { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 25px; max-width: 1000px; margin: 20px auto; }
-        .info-box { padding: 40px; text-align: center; overflow: visible; }
-        .btn-waze { border: 1px solid #33ccff; color: #33ccff; padding: 12px 30px; border-radius: 4px; text-decoration: none; font-size: 0.65rem; letter-spacing: 2px; text-transform: uppercase; display: inline-block; margin-top: 20px; transition: var(--transition); }
-        .btn-waze:hover { background: #33ccff; color: white; transform: translateY(-3px); box-shadow: 0 10px 20px rgba(51, 204, 255, 0.2); }
-
-        footer { padding: 60px 5%; text-align: center; color: rgba(255,255,255,0.1); font-size: 0.6rem; letter-spacing: 3px; }
-
-        @media (max-width: 768px) {
-            header { flex-direction: column; padding: 15px; gap: 10px; }
-            section { padding: 30px 5%; }
-            .hero { height: 35vh; }
-            .price { font-size: 1.1rem; }
-            .rate-card { padding: 20px 5px; }
+        .gallery-item { transition: all 0.3s ease; }
+        
+        /* Hero Background Overlay */
+        .hero-overlay {
+            background: linear-gradient(rgba(15, 23, 42, 0.7), rgba(15, 23, 42, 0.7)), 
+                        url('https://i.postimg.cc/ZKvDrWCj/1d3dae9ca95228b0df542be7c1a1980e.jpg');
+            background-size: cover;
+            background-position: center;
         }
     </style>
+
 </head>
-<body>
+<body class="font-sans text-slate-900 bg-white">
 
-    <header>
-        <div class="logo">Casa Cinderella</div>
-        <nav>
-            <a href="#rates">Packages</a>
-            <a href="#amenities">Inclusions</a>
-            <a href="#payment">Booking</a>
-        </nav>
-    </header>
+<nav class="fixed w-full z-50 bg-navy/90 backdrop-blur-md text-white py-4 shadow-lg">
+        <div class="max-w-6xl mx-auto px-6 flex justify-between items-center">
 
-    <div class="hero"></div>
-
-    <section id="rates">
-        <div class="section-title"><h2>Packages</h2></div>
-        <div class="rates-grid">
-            <div class="glass-card rate-card">
-                <span style="font-size: 0.5rem; color: var(--soft-silver);">DAY STAY</span>
-                <span class="price">₱7,999</span>
+ 
+            <h1 class="text-xl tracking-[0.2em]">Casa Cinderella</h1>
+            <div class="hidden md:flex space-x-8 text-sm font-medium uppercase tracking-wider">
+            
+ 
+                <a href="#about" class="hover:text-blue-400 transition">Inclusions</a>
+                <a href="#rates" class="hover:text-blue-400 transition">Rates</a>
+                <a href="#gallery" class="hover:text-blue-400 transition">Gallery</a>
+                <a href="#location" class="hover:text-blue-400 transition">Location</a>
+              
             </div>
-            <div class="glass-card rate-card">
-                <span style="font-size: 0.5rem; color: var(--soft-silver);">NIGHT STAY</span>
-                <span class="price">₱8,999</span>
-            </div>
-            <div class="glass-card rate-card">
-                <div class="popular-badge">22 Hours</div>
-                <span style="font-size: 0.5rem; color: var(--soft-silver);">RETREAT</span>
-                <span class="price">₱14,999</span>
+        </div>
+    </nav>
+
+
+<!--------------- footer -------------------->
+
+    <section class="hero-overlay h-[60vh] flex items-center justify-center text-center text-white px-4">
+        <div class="mt-12">
+            <h2 class="text-4xl md:text-6xl font-serif italic mb-2">Casa Cinderella</h2>
+            <p class="text-sm md:text-lg mb-8 font-light tracking-[0.4em] uppercase">Private Resort</p>
+            <a href="#about" class="bg-white text-[#0f172a] px-8 py-3 rounded-full font-bold uppercase text-[10px] tracking-widest hover:bg-slate-200 transition">Explore</a>
+        </div>
+    </section>
+    
+<!--------------- Inclusions -------------------->
+
+    <section id="about" class="py-16 bg-slate-50">
+        <div class="max-w-6xl mx-auto px-6">
+            <h3 class="text-3xl font-bold text-[#0f172a] text-center mb-16 uppercase tracking-widest">What's Included</h3>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-y-16 gap-x-8 text-center">
+                <div class="flex flex-col items-center"><i class="fas fa-swimming-pool text-4xl text-[#1e293b] mb-4"></i><p class="text-sm font-medium text-slate-700">Private Pool & Lights</p></div>
+                
+<div class="flex flex-col items-center"><i class="fas fa-bed text-4xl text-[#1e293b] mb-4"></i><p class="text-sm font-medium text-slate-700">Guest Room (4 Beds)</p></div>
+                
+<div class="flex flex-col items-center"><i class="fas fa-car text-4xl text-[#1e293b] mb-4"></i><p class="text-sm font-medium text-slate-700">Gated Parking (5 Cars)</p></div>
+
+<div class="flex flex-col items-center"><i class="fas fa-home text-4xl text-[#1e293b] mb-4"></i><p class="text-sm font-medium text-slate-700">Big and small gazebos</p></div>
+
+<div class="flex flex-col items-center"><i class="fas fa-chair text-4xl text-[#1e293b] mb-4"></i><p class="text-sm font-medium text-slate-700">Tables and benches</p></div>
+
+<div class="flex flex-col items-center"><i class="fas fa-shower text-4xl text-[#1e293b] mb-4"></i><p class="text-sm font-medium text-slate-700">Outdoor shower area & toilet</p></div>
+
+<div class="flex flex-col items-center"><i class="fas fa-utensils text-4xl text-[#1e293b] mb-4"></i><p class="text-sm font-medium text-slate-700">Sink & Grill</p></div>
+
+<div class="flex flex-col items-center"><i class="fas fa-tv text-4xl text-[#1e293b] mb-4"></i><p class="text-sm font-medium text-slate-700">TV & Refrigerator</p></div>     
             </div>
         </div>
     </section>
+    
+  <section class="py-16 bg-navy/90 backdrop-blur-md shadow-lg">
+        <div class="max-w-6xl mx-auto px-6">
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+        <div class="p-4"><i class="fas fa-users text-4xl text-[#01338c] mb-2"></i><p>Up to 25 Pax<br>(additional 150/excess)</p></div>
+            <div class="p-4"><i class="fas fa-paw text-4xl text-[#01338c] mb-2"></i><p>Pets allowed<br>(except main pool area)</p></div>
+            <div class="p-4"><i class="fas fa-ban text-4xl text-[#01338c] mb-2"></i><p>No Corkage Fee</p></div>
+            <div class="p-4"><i class="fas fa-music text-4xl text-[#01338c] mb-2"></i><p>Entertainment set-up allowed</p></div>
+        </div>
+    </section>
+    
+<!--------------- resort gallery -------------------->
 
-    <section id="amenities">
-        <div class="section-title"><h2>Inclusions</h2></div>
-        <div class="amenities-grid">
-            <div class="glass-card amenity-card">
-                <div class="img-container"><img src="https://i.postimg.cc/c1hGHbxb/IMG-8204-2.png" alt="Pool"></div>
-                <div class="amenity-info">
-                    <h4>Private Pool Area</h4>
-                    <p>Exclusive pool with atmospheric night lighting. Features clean outdoor facilities including a shower and CR.</p>
+<section id="gallery" class="py-20 bg-white px-6">
+
+<div class="max-w-6xl mx-auto">
+<h3 class="text-3xl font-bold text-[#0f172a] text-center mb-12 uppercase tracking-widest">Resort Gallery</h3>
+<div class="flex flex-wrap justify-center gap-3 mb-10">
+
+<button onclick="filterGallery('all')" class="g-btn bg-[#0f172a] text-white px-6 py-2 rounded-full text-[10px] font-bold uppercase transition">All</button>
+
+<button onclick="filterGallery('pool')" class="g-btn bg-slate-100 px-6 py-2 rounded-full text-[10px] font-medium uppercase transition">Pool Area</button>
+
+
+<button onclick="filterGallery('room')" class="g-btn bg-slate-100 px-6 py-2 rounded-full text-[10px] font-bold uppercase transition">Guest Room</button>
+
+<button onclick="filterGallery('parking')" class="g-btn bg-slate-100 px-6 py-2 rounded-full text-[10px] font-bold uppercase transition">Parking Area</button>
+
+<button onclick="filterGallery('gazebo')" class="g-btn bg-slate-100 px-6 py-2 rounded-full text-[10px] font-bold uppercase transition">Gazebos</button>
+
+<button onclick="filterGallery('others')" class="g-btn bg-slate-100 px-6 py-2 rounded-full text-[10px] font-bold uppercase transition">Others</button>
+</div>
+
+<!--------------- Pool Area -------------------->
+
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+    <div class="gallery-item pool block h-72 bg-slate-200 rounded-xl overflow-hidden shadow-md">
+        <img src="https://i.postimg.cc/ZKvDrWCj/1d3dae9ca95228b0df542be7c1a1980e.jpg" class="w-full h-full object-cover">
+    </div>
+    <div class="gallery-item pool block h-72 bg-slate-200 rounded-xl overflow-hidden shadow-md">
+        <img src="https://i.postimg.cc/Nfkb639r/IMG_8199_2.png" class="w-full h-full object-cover">
+    </div>
+    <div class="gallery-item pool block h-72 bg-slate-200 rounded-xl overflow-hidden shadow-md">
+        <img src="https://i.postimg.cc/3wScgPqb/IMG_8226_2.png" class="w-full h-full object-cover">
+    </div>
+    <div class="gallery-item pool block h-72 bg-slate-200 rounded-xl overflow-hidden shadow-md">
+        <img src="https://i.postimg.cc/nLxVDsGt/b59f000c5a9a8d1e63601227ba8b9499.jpg" class="w-full h-full object-cover">
+    </div>
+    <div class="gallery-item pool block h-72 bg-slate-200 rounded-xl overflow-hidden shadow-md">
+        <img src="https://i.postimg.cc/wMSRKTGL/IMG_8266_2.png" class="w-full h-full object-cover">
+    </div>
+    <div class="gallery-item pool block h-72 bg-slate-200 rounded-xl overflow-hidden shadow-md">
+        <img src="https://i.postimg.cc/c1hGHbxb/IMG_8204_2.png" class="w-full h-full object-cover">
+    </div>
+    
+    
+    <div class="gallery-item pool block h-72 bg-slate-200 rounded-xl overflow-hidden shadow-md">
+        <img src="https://i.postimg.cc/7YpZqtCg/1f45454daa92c9a4d89d27e071e470e6.jpg" class="w-full h-full object-cover">
+    </div>
+    <div class="gallery-item pool block h-72 bg-slate-200 rounded-xl overflow-hidden shadow-md">
+        <img src="https://i.postimg.cc/d0FQy7jV/db01bf2b88fe1347bb35e74d1d4140ce.jpg" class="w-full h-full object-cover">
+    </div>
+    
+    <!--------------- Guest Room -------------------->
+    
+    <div class="gallery-item room block h-72 bg-slate-200 rounded-xl overflow-hidden shadow-md">
+    <img src="https://i.postimg.cc/B6vG3TrN/796d998602ae5f030185c220208da79c.jpg" class="w-full h-full object-cover">
+</div>
+
+    <div class="gallery-item room block h-72 bg-slate-200 rounded-xl overflow-hidden shadow-md">
+    <img src="https://i.postimg.cc/ZYght9gx/6689d253a98a411127283f15cba983b3.jpg" class="w-full h-full object-cover">
+</div>
+
+    <div class="gallery-item room block h-72 bg-slate-200 rounded-xl overflow-hidden shadow-md">
+    <img src="https://i.postimg.cc/9QH506cQ/8327547f6e87d7c11ddcb170583c7935.jpg" class="w-full h-full object-cover">
+</div>
+
+<div class="gallery-item room block h-72 bg-slate-200 rounded-xl overflow-hidden shadow-md">
+    <img src="https://i.postimg.cc/rmpLT1Bj/ba7ac7fed41f5360e46a429ecbd87d79.jpg" class="w-full h-full object-cover">
+</div>
+
+<div class="gallery-item room block h-72 bg-slate-200 rounded-xl overflow-hidden shadow-md">
+    <img src="https://i.postimg.cc/KYm6rtk3/ece084c9f97bbae2b035ca9b23814951.jpg" class="w-full h-full object-cover">
+</div>
+
+<div class="gallery-item room block h-72 bg-slate-200 rounded-xl overflow-hidden shadow-md">
+    <img src="https://i.postimg.cc/50tMJBhs/e46559dd2fcf56d68e36929d023f6b14.jpg" class="w-full h-full object-cover">
+</div>
+<div class="gallery-item room block h-72 bg-slate-200 rounded-xl overflow-hidden shadow-md">
+    <img src="https://i.postimg.cc/rmpLT1Bh/449edb48c321ba64ab5ed0c1318a1a5e.jpg" class="w-full h-full object-cover">
+</div>
+
+<div class="gallery-item room block h-72 bg-slate-200 rounded-xl overflow-hidden shadow-md">
+    <img src="https://i.postimg.cc/wjfBmB6g/IMG_8246_2.png" class="w-full h-full object-cover">
+</div>
+
+<div class="gallery-item room block h-72 bg-slate-200 rounded-xl overflow-hidden shadow-md">
+    <img src="https://i.postimg.cc/CxPKqKF0/IMG_8243_2.png" class="w-full h-full object-cover">
+</div>
+<div class="gallery-item room block h-72 bg-slate-200 rounded-xl overflow-hidden shadow-md">
+    <img src="https://i.postimg.cc/nhBcrK7T/8a4f466ab245085c9db1cad64afac210.jpg" class="w-full h-full object-cover">
+</div>
+
+
+
+  <!--------------- Parking Area -------------------->
+  
+<div class="gallery-item parking block h-72 bg-slate-200 rounded-xl overflow-hidden shadow-md">
+    <img src="https://i.postimg.cc/gkcG2Cfv/IMG_8271_3.png" class="w-full h-full object-cover">
+</div>
+
+    <!--------------- Gazebos -------------------->
+    
+<div class="gallery-item gazebo block h-72 bg-slate-200 rounded-xl overflow-hidden shadow-md">
+    <img src="https://i.postimg.cc/d0FQy7jq/d732908b49ab814c4cb3f5925a458b93.jpg" class="w-full h-full object-cover">
+</div>
+<div class="gallery-item gazebo block h-72 bg-slate-200 rounded-xl overflow-hidden shadow-md">
+    <img src="https://i.postimg.cc/15L3y7gH/6a5ebbc491a51581955b60a34f586696.jpg" class="w-full h-full object-cover">
+</div>
+<div class="gallery-item gazebo block h-72 bg-slate-200 rounded-xl overflow-hidden shadow-md">
+    <img src="https://i.postimg.cc/6pLrJnL7/r35Z_4Gv.jpg" class="w-full h-full object-cover">
+</div>
+<div class="gallery-item gazebo block h-72 bg-slate-200 rounded-xl overflow-hidden shadow-md">
+    <img src="https://i.postimg.cc/sg62h23b/IMG_8202_2.png" class="w-full h-full object-cover">
+</div>
+
+    
+ <!--------------- Others -------------------->
+<div class="gallery-item others block h-72 bg-slate-200 rounded-xl overflow-hidden shadow-md">
+    <img src="https://i.postimg.cc/13Czqzyd/IMG_8229_2.png" class="w-full h-full object-cover">
+</div>
+
+<div class="gallery-item others block h-72 bg-slate-200 rounded-xl overflow-hidden shadow-md">
+    <img src="https://i.postimg.cc/VknLv9Mn/7c770ec7f5cc9feebbe6e58abfb32b6b-2.jpg" class="w-full h-full object-cover">
+</div>
+
+<div class="gallery-item others block h-72 bg-slate-200 rounded-xl overflow-hidden shadow-md">
+    <img src="https://i.postimg.cc/ZRszq051/589015261_1473202038147337_6705379251923629081_n.jpg" class="w-full h-full object-cover">
+</div>
+
+<div class="gallery-item others block h-72 bg-slate-200 rounded-xl overflow-hidden shadow-md">
+    <img src="https://i.postimg.cc/y8cYxhcq/35f74507d5e95f32b84521a126123c67.jpg" class="w-full h-full object-cover">
+</div>
+
+
+      
+    </div>
+
+        </div>
+        
+        
+       
+</section>
+
+<!--------------- Guest Room -------------------->
+
+<!--------------- Weekday Rates -------------------->
+
+    <section id="rates" class="py-20 bg-[#1f2937] text-white">
+        <div class="max-w-5xl mx-auto px-6">
+            <h3 class="text-3xl font-medium text-center mb-12 uppercase tracking-widest">Rates</h3>
+            
+            <div class="grid md:grid-cols-2 gap-12">
+            <div class="bg-white/10 p-8 border border-white/20">
+            
+          
+                    <h4 class="text-xl font-bold tracking-tighter text-blue-400 mb-6 uppercase">Mon - Thurs</h4>
+                    <div class="space-y-6">
+                        <div class="flex justify-between items-end border-b border-white/10 pb-2">
+                            <div><p class="font-semibold">Day Tour</p><p class="text-xs opacity-60 uppercase">8am to 6pm</p></div>
+                            <span class="text-2xl font-light">₱6,499</span>
+                        </div>
+                        <div class="flex justify-between items-end border-b border-white/10 pb-2">
+                            <div><p class="font-semibold">Overnight</p><p class="text-xs opacity-60 uppercase">8pm to 6am</p></div>
+                            <span class="text-2xl font-light">₱6,999</span>
+                        </div>
+                        <div class="flex justify-between items-end border-b border-blue-500 pb-2">
+                            <div><p class="font-semibold text-blue-400">22-Hour Stay</p><p class="text-xs opacity-60 uppercase">Full Experience</p></div>
+                            <span class="text-3xl font-bold text-blue-400">₱12,499</span>
+                        </div>
+                    </div>
+                </div>
+                
+ <!--------------- Weekend Rates -------------------->
+
+                <div class="bg-white/10 p-8 border border-white/20">
+                
+                    <h4 class="text-xl font-bold tracking-tighter mb-6 uppercase">Weekend / Holiday</h4>
+                    <div class="space-y-6">
+                        <div class="flex justify-between items-end border-b border-white/10 pb-2">
+                            <div><p class="font-semibold">Day Tour</p><p class="text-xs opacity-60 uppercase">8am to 6pm</p></div>
+                            <span class="text-2xl font-light">₱8,499</span>
+                        </div>
+                        <div class="flex justify-between items-end border-b border-white/10 pb-2">
+                            <div><p class="font-semibold">Overnight</p><p class="text-xs opacity-60 uppercase">8pm to 6am</p></div>
+                            <span class="text-2xl font-light">₱9,499</span>
+                        </div>
+                        <div class="flex justify-between items-end border-b border-white/10 pb-2">
+                            <div><p class="font-semibold">22-Hour Stay</p><p class="text-xs opacity-60 uppercase">Full Experience</p></div>
+                            <span class="text-3xl font-bold">₱15,499</span>
+                        </div>
+                    </div>
                 </div>
             </div>
-            <div class="glass-card amenity-card">
-                <div class="img-container"><img src="https://i.postimg.cc/B6vG3TrN/796d998602ae5f030185c220208da79c.jpg" alt="Room"></div>
-                <div class="amenity-info">
-                    <h4>Main Guest Room</h4>
-                    <p>Comfortable lodging with 2 double deckers, TV, and refrigerator for your essentials.</p>
-                    <span class="badge-note">Additional rooms available</span>
+            <p class="mt-12 text-center text-xs opacity-40 uppercase tracking-widest">Rates subject to change without prior notice.</p>
+        </div>
+    </section>
+    
+<!---------RATES----------->
+    
+<!--------------- Location -------------------->
+
+    <section id="location" class="py-20 bg-white border-t border-slate-100">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="flex flex-col md:flex-row items-center gap-12">
+                <div class="md:w-1/2">
+                    <h3 class="text-3xl font-bold text-[#0f172a] mb-6 uppercase tracking-widest">Find Us</h3>
+                    <p class="text-lg text-slate-600 mb-2 font-medium">98 Garville Subd, Brgy. Lugam, Malolos Bulacan</p>
+                    <p class="text-slate-500 mb-8 text-sm">Located in a peaceful neighborhood in Malolos, our resort is the perfect quick getaway for families and friends.</p>
+                    <a href="https://maps.google.com" target="_blank" class="inline-block border-2 border-[#0f172a] px-8 py-3 rounded text-[10px] font-bold uppercase hover:bg-[#0f172a] hover:text-white transition">Open in Maps</a>
                 </div>
-            </div>
-            <div class="glass-card amenity-card">
-                <div class="img-container"><img src="https://i.postimg.cc/Nfkb639r/IMG_8199_2.png" alt="Gazebo"></div>
-                <div class="amenity-info">
-                    <h4>Alfresco Dining</h4>
-                    <p>Large gazebo with group seating. Includes a dedicated outdoor sink and grill for BBQ preparations.</p>
-                </div>
-            </div>
-            <div class="glass-card amenity-card">
-                <div class="img-container"><img src="https://i.postimg.cc/6pLrJnL7/r35Z-4Gv.jpg" alt="Small Gazebo"></div>
-                <div class="amenity-info">
-                    <h4>Lounge Spot</h4>
-                    <p>A secondary intimate gazebo perfect for relaxing or having afternoon coffee by the pool.</p>
-                </div>
-            </div>
-            <div class="glass-card amenity-card">
-                <div class="img-container"><img src="https://i.postimg.cc/gkcG2Cfv/IMG-8271-3.png" alt="Parking"></div>
-                <div class="amenity-info">
-                    <h4>Gated Parking</h4>
-                    <p>Secure on-site parking for your group's vehicles, ensuring a worry-free staycation.</p>
+                <div class="md:w-1/2 w-full h-64 rounded-2xl overflow-hidden shadow-xl bg-slate-100">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3856.471676694589!2d120.8170!3d14.8644!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTTCsDUxJzUxLjkiTiAxMjDCsDQ5JzAxLjIiRQ!5e0!3m2!1sen!2sph!4v1630000000000" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
                 </div>
             </div>
         </div>
     </section>
+    
+    
+<!--------------- ready to book? -------------------->
 
-    <section id="payment">
-        <div class="section-title"><h2>Ready to Book?</h2></div>
-        <div class="info-container">
-            <div class="glass-card info-box">
-                <h3 style="text-transform: uppercase; letter-spacing: 4px; font-size: 0.75rem; margin-bottom: 25px; font-weight: 300; color: var(--soft-silver);">Reservation</h3>
-                <img src="https://i.postimg.cc/3xn1Hv2F/we-accept-gcash.jpg" alt="GCash" style="width: 130px; margin-bottom: 20px; border-radius: 4px; opacity: 0.7;">
-                <p style="font-size: 0.75rem; color: var(--accent-coral); margin-bottom: 5px; text-transform: uppercase; letter-spacing: 1px;">50% Downpayment</p>
-                <p style="font-size: 0.7rem; color: var(--soft-silver);">Secure your booking via Messenger.</p>
-            </div>
-            <div id="location" class="glass-card info-box">
-                <h3 style="text-transform: uppercase; letter-spacing: 4px; font-size: 0.75rem; margin-bottom: 25px; font-weight: 300; color: var(--soft-silver);">The Location</h3>
-                <p style="font-size: 0.8rem; color: var(--white); font-weight: 300; letter-spacing: 1px;">98 Garville Subd, Malolos, Bulacan</p>
-                <a href="https://waze.com/ul?q=98%20Garville%20Subd%20Malolos%20Bulacan" target="_blank" class="btn-waze">Navigate</a>
-            </div>
+<section id="book" class="py-20 bg-[#0f172a] text-white text-center px-6">
+
+<h3 class="text-4xl font-serif mb-6 italic tracking-wide">Ready to Book?</h3>
+<p class="max-w-2xl mx-auto mb-10 text-slate-400 font-light text-sm">We accept GCash or Bank Transfer payments. <br>Please contact us via Messenger to check availability.</p>
+
+        <div class="flex flex-wrap justify-center gap-6 mb-12">
+            <div class="flex items-center space-x-2"><i class="fas fa-wallet text-blue-400"></i> <span class="uppercase tracking-widest text-sm">Gcash</span></div>
+            <div class="flex items-center space-x-2"><i class="fas fa-university text-blue-400"></i> <span class="uppercase tracking-widest text-sm">Bank Transfer</span></div>
         </div>
+
+        <a href="https://m.me/YOUR_PAGE_NAME" target="_blank" class="bg-blue-600 hover:bg-blue-500 text-white px-12 py-4 rounded-full font-bold uppercase text-[10px] tracking-widest transition-all shadow-2xl inline-block">Inquire via Messenger</a>
     </section>
 
-    <a href="https://www.facebook.com/casacinderella/" target="_blank" class="floating-messenger">CHAT WITH US</a>
+<!--------------- footer -------------------->
 
-    <footer>
-        <p>CASA CINDERELLA PRIVATE RESORT • MALOLOS BULACAN</p>
+    <footer class="bg-[#1f2937] text-slate-500 py-10 text-center text-[8px] uppercase tracking-[0.4em]">
+        &copy; 2014 Casa Cinderella Private Resort. All Rights Reserved.
     </footer>
 
+    <a href="https://www.facebook.com/casacinderella" target="_blank" class="fixed bottom-6 right-6 bg-[#0084FF] text-white p-4 rounded-full shadow-2xl hover:scale-110 transition-all z-50">
+        <i class="fab fa-facebook-messenger text-3xl"></i>
+    </a>
+
+    <script>
+        function filterGallery(category) {
+            const items = document.querySelectorAll('.gallery-item');
+            const btns = document.querySelectorAll('.g-btn');
+            btns.forEach(btn => {
+                btn.classList.remove('bg-[#0f172a]', 'text-white');
+                btn.classList.add('bg-slate-100', 'text-slate-900');
+            });
+        
+            event.target.classList.add('bg-[#0f172a]', 'text-white');
+            items.forEach(item => {
+                item.style.display = (category === 'all' || item.classList.contains(category)) ? 'block' : 'none';
+            });
+        }
+    </script>
 </body>
 </html>
