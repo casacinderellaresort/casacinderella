@@ -25,6 +25,20 @@
             background-size: cover;
             background-position: center;
         }
+        
+         /* Animation for Gallery Filtering */
+        .gallery-item {
+            transition: all 0.4s ease-in-out;
+        }
+        
+        .fade-in {
+            animation: fadeIn 0.5s forwards;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
     </style>
 
 </head>
@@ -51,7 +65,7 @@
 
 <!--------------- footer -------------------->
 
-    <section class="hero-overlay h-[60vh] flex items-center justify-center text-center text-white px-4">
+    <section class="hero-overlay h-[60vh] flex items-center justify-center text-center text-white px-4 shadow-lg">
         <div class="mt-12">
             <h2 class="text-4xl md:text-6xl font-serif italic mb-2">Casa Cinderella</h2>
             <p class="text-sm md:text-lg mb-8 font-light tracking-[0.4em] uppercase">Private Resort</p>
@@ -59,47 +73,141 @@
         </div>
     </section>
     
-<!--------------- Inclusions -------------------->
+    
+<!--------------- Rates -------------------->
 
-    <section id="about" class="py-10 bg-slate-50">
-        <div class="max-w-6xl mx-auto px-6">
-            <h3 class="text-3xl font-bold text-[#0f172a] text-center mb-16 uppercase tracking-widest">What's Included</h3>
-            <div class="grid grid-cols-4 md:grid-cols-4 gap-y-10 gap-x-8 text-center">
-                <div class="flex flex-col items-center"><i class="fas fa-swimming-pool text-4xl text-[#1e293b] mb-4"></i><p class="text-sm font-medium text-slate-700">Private Pool & Lights</p></div>
+<section id="rates" class="py-24 bg-white">
+    <div class="max-w-6xl mx-auto px-6">
+        <div class="text-center mb-16">
+            <h3 class="text-3xl md:text-4xl font-serif italic text-[#0f172a] mb-2">Stay Options</h3>
+            <div class="h-1 w-16 bg-blue-600 mx-auto rounded-full"></div>
+             <p class="mt-12 text-center text-xs opacity-40 uppercase tracking-widest">Rates subject to change without prior notice.</p>
+        </div>
+
+        <div class="mb-20">
+            <h4 class="text-center text-[10px] font-bold tracking-[0.4em] uppercase text-slate-400 mb-10">Weekday (Mon - Thu)</h4>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4 items-center">
                 
-<div class="flex flex-col items-center"><i class="fas fa-bed text-4xl text-[#1e293b] mb-4"></i><p class="text-sm font-medium text-slate-700">Guest Room (4 Beds)</p></div>
+                <div class="bg-slate-100/80 p-8 rounded-2xl border border-slate-200 text-center order-2 md:order-1">
+                    <p class="text-[10px] font-bold text-slate-500 uppercase tracking-widest mb-1">Day Tour</p>
+                    <p class="text-[10px] text-slate-400 mb-4 uppercase">8am — 6pm</p>
+                    <p class="text-2xl font-bold text-slate-700">₱6,499</p>
+                </div>
                 
-<div class="flex flex-col items-center"><i class="fas fa-car text-4xl text-[#1e293b] mb-4"></i><p class="text-sm font-medium text-slate-700">Gated Parking (5 Cars)</p></div>
+                <div class="relative bg-white p-12 rounded-3xl border-2 border-[#0f172a] text-center shadow-[0_20px_50px_rgba(15,23,42,0.1)] transform md:scale-110 z-10 order-1 md:order-2">
+                    <span class="absolute -top-3 left-1/2 -translate-x-1/2 bg-[#0f172a] text-white text-[9px] font-black px-4 py-1 rounded-full uppercase tracking-widest">Recommended</span>
+                    <p class="text-[10px] font-bold text-blue-600 uppercase tracking-widest mb-1">22-Hour Stay</p>
+                    <p class="text-[10px] text-slate-400 mb-4 uppercase italic">Full Experience</p>
+                    <p class="text-4xl font-black text-[#0f172a]">₱12,499</p>
+                </div>
 
-<div class="flex flex-col items-center"><i class="fas fa-home text-4xl text-[#1e293b] mb-4"></i><p class="text-sm font-medium text-slate-700">Big and small gazebos</p></div>
-
-<div class="flex flex-col items-center"><i class="fas fa-chair text-4xl text-[#1e293b] mb-4"></i><p class="text-sm font-medium text-slate-700">Tables and benches</p></div>
-
-<div class="flex flex-col items-center"><i class="fas fa-shower text-4xl text-[#1e293b] mb-4"></i><p class="text-sm font-medium text-slate-700">Outdoor shower area & toilet</p></div>
-
-<div class="flex flex-col items-center"><i class="fas fa-utensils text-4xl text-[#1e293b] mb-4"></i><p class="text-sm font-medium text-slate-700">Sink & Grill</p></div>
-
-<div class="flex flex-col items-center"><i class="fas fa-tv text-4xl text-[#1e293b] mb-4"></i><p class="text-sm font-medium text-slate-700">TV & Refrigerator</p></div>     
+                <div class="bg-slate-100/80 p-8 rounded-2xl border border-slate-200 text-center order-3">
+                    <p class="text-[10px] font-bold text-slate-500 uppercase tracking-widest mb-1">Overnight</p>
+                    <p class="text-[10px] text-slate-400 mb-4 uppercase">8pm — 6am</p>
+                    <p class="text-2xl font-bold text-slate-700">₱6,999</p>
+                </div>
             </div>
         </div>
-    </section>
-    
-  <section class="py-8 bg-navy/90 backdrop-blur-md shadow-lg">
-        <div class="max-w-6xl mx-auto px-6">
-        <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
-        <div class="p-4"><i class="fas fa-users text-4xl text-[#01338c] mb-2"></i><p>Up to 25 Pax<br>(additional 150/excess)</p></div>
-            <div class="p-4"><i class="fas fa-paw text-4xl text-[#01338c] mb-2"></i><p>Pets allowed<br>(except main pool area)</p></div>
-            <div class="p-4"><i class="fas fa-ban text-4xl text-[#01338c] mb-2"></i><p>No Corkage Fee</p></div>
-            <div class="p-4"><i class="fas fa-music text-4xl text-[#01338c] mb-2"></i><p>Entertainment set-up allowed</p></div>
+
+        <div>
+            <h4 class="text-center text-[10px] font-bold tracking-[0.4em] uppercase text-slate-400 mb-10">Weekend & Holidays</h4>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4 items-center">
+                
+                <div class="bg-slate-100/80 p-8 rounded-2xl border border-slate-200 text-center order-2 md:order-1">
+                    <p class="text-[10px] font-bold text-slate-500 uppercase tracking-widest mb-1">Day Tour</p>
+                    <p class="text-[10px] text-slate-400 mb-4 uppercase">8am — 6pm</p>
+                    <p class="text-2xl font-bold text-slate-700">₱8,499</p>
+                </div>
+
+                <div class="relative bg-white p-12 rounded-3xl border-2 border-blue-600 text-center shadow-[0_20px_50px_rgba(37,99,235,0.1)] transform md:scale-110 z-10 order-1 md:order-2">
+                    <span class="absolute -top-3 left-1/2 -translate-x-1/2 bg-blue-600 text-white text-[9px] font-black px-4 py-1 rounded-full uppercase tracking-widest">Most Popular</span>
+                    <p class="text-[10px] font-bold text-[#0f172a] uppercase tracking-widest mb-1">22-Hour Stay</p>
+                    <p class="text-[10px] text-slate-400 mb-4 uppercase italic">Full Experience</p>
+                    <p class="text-4xl font-black text-[#0f172a]">₱15,499</p>
+                </div>
+
+                <div class="bg-slate-100/80 p-8 rounded-2xl border border-slate-200 text-center order-3">
+                    <p class="text-[10px] font-bold text-slate-500 uppercase tracking-widest mb-1">Overnight</p>
+                    <p class="text-[10px] text-slate-400 mb-4 uppercase">8pm — 6am</p>
+                    <p class="text-2xl font-bold text-slate-700">₱9,499</p>
+                </div>
+            </div>
         </div>
-    </section>
+    </div>
+    
+            
+</section>
+    
+<!--------------- Inclusions -------------------->
+
+<section id="about" class="relative z-10 py-24 bg-[#0f172a] text-white shadow-[0_25px_50px_-12px_rgba(15,23,42,0.8)]">
+    <div class="max-w-6xl mx-auto px-6">
+        <h3 class="text-3xl font-md text-center mb-16 uppercase tracking-[0.3em]">INCLUSIONS</h3>
+        
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-y-16 gap-x-8 text-center mb-20">
+            <div class="group flex flex-col items-center">
+                <i class="fas fa-swimming-pool text-4xl text-blue-400 mb-4 transition-transform group-hover:scale-110"></i>
+                <p class="text-xs font-bold uppercase tracking-widest text-slate-200">Private Pool & Lights</p>
+            </div>
+            <div class="group flex flex-col items-center">
+                <i class="fas fa-bed text-4xl text-blue-400 mb-4 transition-transform group-hover:scale-110"></i>
+                <p class="text-xs font-bold uppercase tracking-widest text-slate-200">Guest Room (4 Beds)</p>
+            </div>
+            <div class="group flex flex-col items-center">
+                <i class="fas fa-car text-4xl text-blue-400 mb-4 transition-transform group-hover:scale-110"></i>
+                <p class="text-xs font-bold uppercase tracking-widest text-slate-200">Gated Parking (5 Cars)</p>
+            </div>
+            <div class="group flex flex-col items-center">
+                <i class="fas fa-home text-4xl text-blue-400 mb-4 transition-transform group-hover:scale-110"></i>
+                <p class="text-xs font-bold uppercase tracking-widest text-slate-200">Big & Small Gazebos</p>
+            </div>
+            <div class="group flex flex-col items-center">
+                <i class="fas fa-chair text-4xl text-blue-400 mb-4 transition-transform group-hover:scale-110"></i>
+                <p class="text-xs font-bold uppercase tracking-widest text-slate-200">Tables & Benches</p>
+            </div>
+            <div class="group flex flex-col items-center">
+                <i class="fas fa-shower text-4xl text-blue-400 mb-4 transition-transform group-hover:scale-110"></i>
+                <p class="text-xs font-bold uppercase tracking-widest text-slate-200">Outdoor Shower & Toilet</p>
+            </div>
+            <div class="group flex flex-col items-center">
+                <i class="fas fa-utensils text-4xl text-blue-400 mb-4 transition-transform group-hover:scale-110"></i>
+                <p class="text-xs font-bold uppercase tracking-widest text-slate-200">Sink & Grill</p>
+            </div>
+            <div class="group flex flex-col items-center">
+                <i class="fas fa-tv text-4xl text-blue-400 mb-4 transition-transform group-hover:scale-110"></i>
+                <p class="text-xs font-bold uppercase tracking-widest text-slate-200">TV & Refrigerator</p>
+            </div>
+        </div>
+
+        <div class="border-t border-white/10 pt-16">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+                <div class="p-4 bg-white/5 rounded-2xl border border-white/5 hover:bg-white/10 transition-colors">
+                    <i class="fas fa-users text-2xl text-blue-400 mb-3"></i>
+                    <p class="text-[10px] leading-relaxed uppercase tracking-widest text-slate-300">Up to 25 Pax<br><span class="text-blue-400 font-bold">₱150/excess</span></p>
+                </div>
+                <div class="p-4 bg-white/5 rounded-2xl border border-white/5 hover:bg-white/10 transition-colors">
+                    <i class="fas fa-paw text-2xl text-blue-400 mb-3"></i>
+                    <p class="text-[10px] leading-relaxed uppercase tracking-widest text-slate-300">Pets allowed<br><span class="opacity-50 text-[9px] italic">(except pool)</span></p>
+                </div>
+                <div class="p-4 bg-white/5 rounded-2xl border border-white/5 hover:bg-white/10 transition-colors">
+                    <i class="fas fa-ban text-2xl text-blue-400 mb-3"></i>
+                    <p class="text-[10px] leading-relaxed uppercase tracking-widest text-slate-300">No Corkage<br><span class="text-blue-400 font-bold">Fees</span></p>
+                </div>
+                <div class="p-4 bg-white/5 rounded-2xl border border-white/5 hover:bg-white/10 transition-colors">
+                    <i class="fas fa-music text-2xl text-blue-400 mb-3"></i>
+                    <p class="text-[10px] leading-relaxed uppercase tracking-widest text-slate-300">Entertainment<br><span class="text-blue-400 font-bold">Allowed</span></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
     
 <!--------------- resort gallery -------------------->
 
 <section id="gallery" class="py-20 bg-white px-6">
 
 <div class="max-w-6xl mx-auto">
-<h3 class="text-3xl font-bold text-[#0f172a] text-center mb-12 uppercase tracking-widest">Resort Gallery</h3>
+<h3 class="text-3xl font-md text-[#0f172a] text-center mb-12 uppercase tracking-widest">Resort Gallery</h3>
 <div class="flex flex-wrap justify-center gap-3 mb-10">
 
 <button onclick="filterGallery('all')" class="g-btn bg-[#0f172a] text-white px-6 py-2 rounded-full text-[10px] font-bold uppercase transition">All</button>
@@ -228,7 +336,7 @@
 </div>
 
 
-      
+     
     </div>
 
         </div>
@@ -237,78 +345,63 @@
        
 </section>
 
-
-<!--------------- Weekday Rates -------------------->
-
-    <section id="rates" class="py-20 bg-[#1f2937] text-white">
-        <div class="max-w-5xl mx-auto px-6">
-            <h3 class="text-3xl font-medium text-center mb-12 uppercase tracking-widest">Rates</h3>
-            
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
-            <div class="bg-white/10 p-8 border border-white/20">
-            
-          
-                    <h4 class="text-xl font-bold tracking-tighter text-blue-400 mb-6 uppercase">Mon - Thurs</h4>
-                    <div class="space-y-6">
-                        <div class="flex justify-between items-end border-b border-white/10 pb-2">
-                            <div><p class="font-semibold">Day Tour</p><p class="text-xs opacity-60 uppercase">8am to 6pm</p></div>
-                            <span class="text-2xl font-light">₱6,499</span>
-                        </div>
-                        <div class="flex justify-between items-end border-b border-white/10 pb-2">
-                            <div><p class="font-semibold">Overnight</p><p class="text-xs opacity-60 uppercase">8pm to 6am</p></div>
-                            <span class="text-2xl font-light">₱6,999</span>
-                        </div>
-                        <div class="flex justify-between items-end border-b border-blue-500 pb-2">
-                            <div><p class="font-semibold text-blue-400">22-Hour Stay</p><p class="text-xs opacity-60 uppercase">Full Experience</p></div>
-                            <span class="text-3xl font-bold text-blue-400">₱12,499</span>
-                        </div>
-                    </div>
-                </div>
-                
- <!--------------- Weekend Rates -------------------->
-
-                <div class="bg-white/10 p-8 border border-white/20">
-                
-                    <h4 class="text-xl font-bold tracking-tighter mb-6 uppercase">Weekend / Holiday</h4>
-                    <div class="space-y-6">
-                        <div class="flex justify-between items-end border-b border-white/10 pb-2">
-                            <div><p class="font-semibold">Day Tour</p><p class="text-xs opacity-60 uppercase">8am to 6pm</p></div>
-                            <span class="text-2xl font-light">₱8,499</span>
-                        </div>
-                        <div class="flex justify-between items-end border-b border-white/10 pb-2">
-                            <div><p class="font-semibold">Overnight</p><p class="text-xs opacity-60 uppercase">8pm to 6am</p></div>
-                            <span class="text-2xl font-light">₱9,499</span>
-                        </div>
-                        <div class="flex justify-between items-end border-b border-white/10 pb-2">
-                            <div><p class="font-semibold">22-Hour Stay</p><p class="text-xs opacity-60 uppercase">Full Experience</p></div>
-                            <span class="text-3xl font-bold">₱15,499</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <p class="mt-12 text-center text-xs opacity-40 uppercase tracking-widest">Rates subject to change without prior notice.</p>
-        </div>
-    </section>
     
-<!---------RATES----------->
-    
+
+
 <!--------------- Location -------------------->
 
-    <section id="location" class="py-20 bg-white border-t border-slate-100">
-        <div class="max-w-6xl mx-auto px-6">
-            <div class="flex flex-col md:flex-row items-center gap-12">
-                <div class="md:w-1/2">
-                    <h3 class="text-3xl font-bold text-[#0f172a] mb-6 uppercase tracking-widest">Find Us</h3>
-                    <p class="text-lg text-slate-600 mb-2 font-medium">98 Garville Subd, Brgy. Lugam, Malolos Bulacan</p>
-                    <p class="text-slate-500 mb-8 text-sm">Located in a peaceful neighborhood in Malolos, our resort is the perfect quick getaway for families and friends.</p>
-                    <a href="https://maps.google.com" target="_blank" class="inline-block border-2 border-[#0f172a] px-8 py-3 rounded text-[10px] font-bold uppercase hover:bg-[#0f172a] hover:text-white transition">Open in Maps</a>
+<section id="location" class="py-24 bg-white">
+    <div class="max-w-6xl mx-auto px-6">
+        <div class="flex flex-col lg:flex-row items-center gap-16">
+            
+            <div class="lg:w-1/2 space-y-6">
+                <div class="inline-block bg-blue-50 text-blue-600 text-[10px] font-bold px-4 py-1 rounded-full uppercase tracking-tighter mb-2">
+                    Our Location
                 </div>
-                <div class="md:w-1/2 w-full h-64 rounded-2xl overflow-hidden shadow-xl bg-slate-100">
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3856.471676694589!2d120.8170!3d14.8644!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTTCsDUxJzUxLjkiTiAxMjDCsDQ5JzAxLjIiRQ!5e0!3m2!1sen!2sph!4v1630000000000" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                <h3 class="text-4xl font-serif italic text-[#0f172a] leading-tight">Visit Casa Cinderella</h3>
+                
+                <div class="bg-slate-50 p-6 rounded-2xl border-l-4 border-blue-600 shadow-sm">
+                    <p class="text-lg text-[#0f172a] font-bold mb-1">98 Garville Subd, Brgy. Lugam</p>
+                    <p class="text-slate-600 font-medium">Malolos, Bulacan, Philippines</p>
+                </div>
+
+                <p class="text-slate-500 leading-relaxed max-w-md">
+                    Nestled in a peaceful, private neighborhood in Malolos, our resort offers the perfect quick escape without the long drive. We are easily accessible via major roads and offer secure parking.
+                </p>
+
+                <div class="pt-4">
+                    <a href="https://www.google.com/maps/search/?api=1&query=Casa+Cinderella+Malolos+Bulacan" 
+                       target="_blank" 
+                       class="inline-flex items-center gap-3 bg-[#0f172a] text-white px-10 py-4 rounded-full text-[11px] font-bold uppercase tracking-widest hover:bg-blue-600 transition-all shadow-lg hover:shadow-blue-200">
+                        <i class="fas fa-location-dot"></i> Get Directions
+                    </a>
                 </div>
             </div>
+
+            <div class="lg:w-1/2 w-full group">
+                <div class="relative h-[400px] w-full rounded-[2rem] overflow-hidden shadow-2xl transition-transform duration-500 group-hover:scale-[1.02]">
+                    <iframe 
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3856.915729704257!2d120.81267437590864!3d14.829982471415175!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3396519391e92f2d%3A0xc3f7a77b78972e9d!2sCasa%20Cinderella!5e0!3m2!1sen!2sph!4v1700000000000!5m2!1sen!2sph" 
+                        width="100%" 
+                        height="100%" 
+                        style="border:0;" 
+                        allowfullscreen="" 
+                        loading="lazy" 
+                        referrerpolicy="no-referrer-when-downgrade"
+                        class="grayscale-[20%] group-hover:grayscale-0 transition-all duration-700">
+                    </iframe>
+                    
+                    <div class="absolute bottom-6 right-6 bg-white/90 backdrop-blur-md px-4 py-2 rounded-xl shadow-md border border-white/20">
+                        <p class="text-[10px] font-bold text-[#0f172a] uppercase tracking-tighter">Private Compound</p>
+                    </div>
+                </div>
+            </div>
+
         </div>
-    </section>
+    </div>
+</section>
+    
+  
     
     
 <!--------------- ready to book? -------------------->
@@ -336,18 +429,34 @@
         <i class="fab fa-facebook-messenger text-3xl"></i>
     </a>
 
+
     <script>
         function filterGallery(category) {
             const items = document.querySelectorAll('.gallery-item');
             const btns = document.querySelectorAll('.g-btn');
+
+            // 1. Reset Buttons
             btns.forEach(btn => {
                 btn.classList.remove('bg-[#0f172a]', 'text-white');
                 btn.classList.add('bg-slate-100', 'text-slate-900');
             });
-        
-            event.target.classList.add('bg-[#0f172a]', 'text-white');
+
+            // 2. Set Active Button
+            event.currentTarget.classList.remove('bg-slate-100', 'text-slate-900');
+            event.currentTarget.classList.add('bg-[#0f172a]', 'text-white');
+
+            // 3. Filter Items with Animation
             items.forEach(item => {
-                item.style.display = (category === 'all' || item.classList.contains(category)) ? 'block' : 'none';
+                item.classList.remove('fade-in'); // Reset animation
+                
+                if (category === 'all' || item.classList.contains(category)) {
+                    item.style.display = 'block';
+                    // Trigger reflow to restart animation
+                    void item.offsetWidth; 
+                    item.classList.add('fade-in');
+                } else {
+                    item.style.display = 'none';
+                }
             });
         }
     </script>
