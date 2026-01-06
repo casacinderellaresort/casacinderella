@@ -44,6 +44,8 @@
 </head>
 <body class="font-sans text-slate-900 bg-white">
 
+
+
 <nav class="fixed w-full z-50 bg-navy/90 backdrop-blur-md text-white py-6 shadow-lg">
     <div class="max-w-6xl mx-auto px-6 flex justify-center items-center">
     
@@ -60,7 +62,8 @@
     </div>
 </nav>
 
-<!--------------- footer -------------------->
+
+<!--------------- Hero -------------------->
 
     <section class="hero-overlay h-[60vh] flex items-center justify-center text-center text-white px-4 shadow-lg">
         <div class="mt-12">
@@ -70,6 +73,21 @@
         </div>
     </section>
     
+    
+  <!--------------- Hero -------------------->  
+    
+    <div class="bg-blue-600 py-3 px-6 shadow-inner relative z-10">
+    <div class="max-w-6xl mx-auto flex items-center justify-center gap-3">
+        <span class="relative flex h-2 w-2">
+            <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-200 opacity-75"></span>
+            <span class="relative inline-flex rounded-full h-2 w-2 bg-green-600"></span>
+        </span>
+        
+        <p class="text-[9px] md:text-[11px] font-bold uppercase tracking-[0.2em] text-white text-center leading-relaxed">
+            We are continuously updating our website for your better experience.
+        </p>
+    </div>
+</div>
     
 <!--------------- Rates -------------------->
 
@@ -140,9 +158,12 @@
         </div>
     </div>
 </section>
+
+
 <!--------------- Inclusions -------------------->
 
-<section id="about" class="relative z-10 py-24 bg-[#0f172a] text-white shadow-[0_25px_50px_-12px_rgba(15,23,42,0.8)]">
+<section id="about" class="relative z-10 py-24 bg-[#0f172a] text-white">
+
     <div class="max-w-6xl mx-auto px-6">
         <h3 class="text-3xl font-md text-center mb-16 uppercase tracking-[0.3em]">INCLUSIONS</h3>
         
@@ -204,28 +225,64 @@
     </div>
 </section>
 
-
-<div class="mt-16 max-w-3xl mx-auto">
-    <div class="relative bg-slate-50 border border-slate-200 rounded-3xl p-8 text-center shadow-sm overflow-hidden group">
-        <i class="fas fa-door-open absolute -right-4 -bottom-4 text-8xl text-slate-200/50 group-hover:text-blue-100 transition-colors"></i>
+    
+<!--------------- Additional rooms availment -------------------->
+    
+    <div class="max-w-6xl mx-auto mt-12 px-4">
+    <div class="flex flex-col md:flex-row items-center gap-8 lg:gap-12">
         
-        <div class="relative z-10">
+        <div class="w-full md:w-1/2">
+            <div class="bg-white/40 backdrop-blur-md border border-blue-200/50 p-5 rounded-[2rem] shadow-sm">
+                <div class="flex items-center justify-between mb-4">
+                    <div class="flex items-center gap-3">
+                        <div class="bg-pink-600 text-white p-2 rounded-lg">
+                            <i class="fas fa-heart text-xs"></i>
+                        </div>
+                        <div>
+                            <p class="text-[10px] font-black text-[#0f172a] uppercase tracking-tight">Couple Rooms</p>
+                            <p class="text-[11px] text-slate-500 uppercase tracking-tighter">Private space for 2 pax</p>
+                        </div>
+                    </div>
+                    <div class="text-right">
+                        <p class="text-lg font-black text-pink-600 tracking-tighter">₱x,000</p>
+                        <p class="text-[7px] text-slate-400 uppercase font-bold">Per Room</p>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-3 gap-2">
+                    <div class="aspect-square rounded-xl overflow-hidden shadow-sm border border-white/40 hover:scale-105 transition-transform">
+                        <img src="https://i.postimg.cc/v1vXhqcK/att-ny-LKBbw-Agex-T5Ly-JLe-Nag-O5SGv-L1Cmk-VNeo-QOq7z3LE.jpg" class="w-full h-full object-cover" alt="Couple Room">
+                    </div>
+                    <div class="aspect-square rounded-xl overflow-hidden shadow-sm border border-white/40 hover:scale-105 transition-transform">
+                        <img src="https://i.postimg.cc/sQDmNYh0/att-p-Z2Dax-Bs-ANCFuzt-Rlr1pjlc-KH1Bw-Uk3Akygr-Lvn7X8g.jpg" class="w-full h-full object-cover" alt="Couple Room CR">
+                    </div>
+                    <div class="aspect-square rounded-xl overflow-hidden shadow-sm border border-white/40 hover:scale-105 transition-transform">
+                        <img src="https://i.postimg.cc/Z9LjH7CM/att-Har-K7BL54zm1Inw-Thg7Bi8ny6er-Wi-Co-D3WOj6e9Dt0s.jpg" class="w-full h-full object-cover" alt="Couple Room Shower">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="w-full md:w-1/2 text-center md:text-left">
             <span class="bg-blue-600 text-white text-[9px] font-black px-4 py-1 rounded-full uppercase tracking-widest mb-4 inline-block">Premium Upgrade</span>
             
-            <h4 class="text-xl font-serif italic text-[#0f172a] mb-2">Need more space?</h4>
+            <h4 class="text-2xl md:text-3xl font-serif italic text-[#0f172a] mb-4">Need more space?</h4>
             
             <p class="text-slate-600 text-sm leading-relaxed mb-6">
-                Our standard rate includes one main guest room. <br>
-                <span class="font-bold text-[#0f172a]">Additional rooms can be availed at an additional rate</span> <br>
+                Our standard rate includes one main guest room. <br class="hidden md:block">
+                <span class="font-bold text-[#0f172a]">Additional rooms can be availed at an extra rate</span> <br class="hidden md:block">
                 to accommodate larger groups comfortably.
             </p>
 
-            <div class="inline-flex items-center gap-2 text-[#0f172a] font-bold text-[10px] uppercase tracking-widest border-b border-[#0f172a] pb-1 cursor-help">
+            <div class="inline-flex items-center gap-2 text-[#0f172a] font-bold text-[10px] uppercase tracking-widest border-b border-[#0f172a] pb-1 cursor-help hover:text-blue-600 hover:border-blue-600 transition-all">
                 <i class="fas fa-info-circle text-blue-600"></i> Inquire for specific room rates
             </div>
         </div>
+
     </div>
 </div>
+
+
 <!--------------- resort gallery -------------------->
 
 <section id="gallery" class="py-20 bg-white px-6">
@@ -238,8 +295,9 @@
 
 <button onclick="filterGallery('pool')" class="g-btn bg-slate-100 px-6 py-2 rounded-full text-[10px] font-medium uppercase transition">Pool Area</button>
 
-
 <button onclick="filterGallery('room')" class="g-btn bg-slate-100 px-6 py-2 rounded-full text-[10px] font-bold uppercase transition">Guest Room</button>
+
+<button onclick="filterGallery('coupleroom')" class="g-btn bg-slate-100 px-6 py-2 rounded-full text-[10px] font-bold uppercase transition">Couple Rooms</button>
 
 <button onclick="filterGallery('parking')" class="g-btn bg-slate-100 px-6 py-2 rounded-full text-[10px] font-bold uppercase transition">Parking Area</button>
 
@@ -247,6 +305,7 @@
 
 <button onclick="filterGallery('others')" class="g-btn bg-slate-100 px-6 py-2 rounded-full text-[10px] font-bold uppercase transition">Others</button>
 </div>
+
 
 <!--------------- Pool Area -------------------->
 
@@ -318,6 +377,32 @@
     <img src="https://i.postimg.cc/nhBcrK7T/8a4f466ab245085c9db1cad64afac210.jpg" class="w-full h-full object-cover">
 </div>
 
+  <!--------------- Couple Room -------------------->
+  
+
+  <div class="gallery-item coupleroom block h-72 bg-slate-200 rounded-xl overflow-hidden shadow-md">
+    <img src="https://i.postimg.cc/jWhvcgL9/att-k4c3C9x-JLi-YRl90xn-M4y7U0y15GMXFPsz1yw61w-Iew.jpg" class="w-full h-full object-cover">
+</div>
+
+  <div class="gallery-item coupleroom block h-72 bg-slate-200 rounded-xl overflow-hidden shadow-md">
+    <img src="https://i.postimg.cc/v1vXhqcK/att-ny-LKBbw-Agex-T5Ly-JLe-Nag-O5SGv-L1Cmk-VNeo-QOq7z3LE.jpg" class="w-full h-full object-cover">
+</div>
+
+  <div class="gallery-item coupleroom block h-72 bg-slate-200 rounded-xl overflow-hidden shadow-md">
+    <img src="https://i.postimg.cc/TLY04VD9/att-p-KVEs83e-Ped8S2u-MGzed-K8g-PHl9g-Yep-Pn-VJF2Oo-M4c.jpg" class="w-full h-full object-cover">
+</div>
+
+  <div class="gallery-item coupleroom block h-72 bg-slate-200 rounded-xl overflow-hidden shadow-md">
+    <img src="https://i.postimg.cc/CBL7QGqc/att-p-WC7Ff-FS8fm2Fv6z-Y9-h1HTEaecfzp4PMp-Lp-SNi-Hd-Wk.jpg" class="w-full h-full object-cover">
+</div>
+
+  <div class="gallery-item coupleroom block h-72 bg-slate-200 rounded-xl overflow-hidden shadow-md">
+    <img src="https://i.postimg.cc/sQDmNYh0/att-p-Z2Dax-Bs-ANCFuzt-Rlr1pjlc-KH1Bw-Uk3Akygr-Lvn7X8g.jpg" class="w-full h-full object-cover">
+</div>
+
+  <div class="gallery-item coupleroom block h-72 bg-slate-200 rounded-xl overflow-hidden shadow-md">
+    <img src="https://i.postimg.cc/Z9LjH7CM/att-Har-K7BL54zm1Inw-Thg7Bi8ny6er-Wi-Co-D3WOj6e9Dt0s.jpg" class="w-full h-full object-cover">
+</div>
 
 
   <!--------------- Parking Area -------------------->
@@ -428,28 +513,35 @@
     
 <!--------------- calendar -------------------->
 
-<section id="availability" class="py-20 bg-slate-50">
+
+                    
+                    <section id="availability" class="py-20 bg-slate-50">
     <div class="max-w-5xl mx-auto px-6">
         <div class="text-center mb-12">
             <h3 class="text-3xl font-serif italic text-[#0f172a] mb-2">Check Availability</h3>
             <p class="text-[9px] tracking-[0.4em] uppercase text-blue-600 font-black">Live Booking Calendar</p>
         </div>
 
-        <div class="bg-white p-2 md:p-4 rounded-[2rem] shadow-2xl border border-white">
-            <div class="rounded-[1.5rem] overflow-hidden h-[400px] md:h-[600px]">
+        <div class="bg-white p-2 rounded-[2rem] shadow-2xl border border-white overflow-hidden">
+            
+            <div class="block md:hidden h-[500px]">
                 <iframe 
-                    src="https://calendar.google.com/calendar/embed?src=casacinderella.resort%40gmail.com&ctz=Asia%2FManila" style="border: 0" width="800" height="600" frameborder="0" scrolling="no"" 
-                    style="border: 0" 
-                    width="100%" 
-                    height="100%" 
-                    frameborder="0" 
-                    scrolling="no">
+                    src="https://calendar.google.com/calendar/embed?src=YOUR_ID&mode=AGENDA&color=%230f172a&showTitle=0&showNav=1&showPrint=0&showTabs=0&showCalendars=0&showTz=0" 
+                    style="border: 0" width="100%" height="100%" frameborder="0" scrolling="no">
                 </iframe>
             </div>
+
+            <div class="hidden md:block h-[600px]">
+                <iframe 
+                    src="https://calendar.google.com/calendar/embed?src=casacinderella.resort%40gmail.com&ctz=Asia%2FManila" 
+                    style="border: 0" width="100%" height="100%" frameborder="0" scrolling="no">
+                </iframe>
+            </div>
+
         </div>
         
-        <p class="mt-6 text-center text-slate-400 text-[10px] uppercase tracking-widest">
-             * Best viewed on desktop or tablet. This calendar is for viewing only. <br>Please message us to officially reserve a slot.
+        <p class="mt-6 text-center text-slate-400 text-[10px] uppercase tracking-widest px-4">
+            *Best viewed on desktop. For mobile, see the list of reserved dates above.
         </p>
     </div>
 </section>
@@ -465,14 +557,13 @@
             Follow us or send a message to check available dates.
         </p>
         
-      <div class="max-w-2xl mx-auto">
+                <div class="max-w-2xl mx-auto">
             <div class="flex items-center justify-center gap-4 m-10">
                 <i class="fas fa-info-circle text-red-600"></i>
                 <p class="text-[11px] font-medium text-white uppercase tracking-widest">
                     50% downpayment required to secure your slot
                 </p>
             </div>
-        
 
         <div class="flex flex-col sm:flex-row justify-center items-center gap-4 md:gap-6">
             
