@@ -1,665 +1,1319 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-            <meta property="og:title" content="Casa Cinderella">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta property="og:title" content="Casa Cinderella" />
 
-<meta property="og:description" content="A private getaway in the heart of Malolos, Bulacan.">
+    <meta
+      property="og:description"
+      content="A private getaway in the heart of Malolos, Bulacan."
+    />
 
-<meta property="og:image" content="https://i.postimg.cc/XYd7qKFm/18da96d372fe99ab38437ec516aa7867.jpg">
+    <meta
+      property="og:image"
+      content="https://i.postimg.cc/XYd7qKFm/18da96d372fe99ab38437ec516aa7867.jpg"
+    />
 
-<meta property="og:url" content="https://casacinderellaresort.github.io/casacinderella/">
+    <meta
+      property="og:url"
+      content="https://casacinderellaresort.github.io/casacinderella/"
+    />
 
-<meta property="og:type" content="website">
+    <meta property="og:type" content="website" />
     <title>Casa Cinderella</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
     <style>
-    
-        :root { --navy: #0f172a; --dark-gray: #1f2937; }
-        html { scroll-behavior: smooth; }
-        .hero-overlay {
-            background: linear-gradient(rgba(15, 23, 42, 0.75), rgba(15, 23, 42, 0.75)), 
-                        url('https://i.postimg.cc/ZKvDrWCj/1d3dae9ca95228b0df542be7c1a1980e.jpg');
-            background-size: cover;
-            background-position: center;
-        }
-        .gallery-item { transition: all 0.3s ease; }
-        
-        /* Hero Background Overlay */
-        .hero-overlay {
-            background: linear-gradient(rgba(15, 23, 42, 0.7), rgba(15, 23, 42, 0.7)), 
-                        url('https://i.postimg.cc/ZKvDrWCj/1d3dae9ca95228b0df542be7c1a1980e.jpg');
-            background-size: cover;
-            background-position: center;
-        }
-        
-         /* Animation for Gallery Filtering */
-        .gallery-item {
-            transition: all 0.4s ease-in-out;
-        }
-        
-        .fade-in {
-            animation: fadeIn 0.5s forwards;
-        }
+      :root {
+        --navy: #0f172a;
+        --dark-gray: #1f2937;
+      }
+      html {
+        scroll-behavior: smooth;
+      }
+      .hero-overlay {
+        background: linear-gradient(
+            rgba(15, 23, 42, 0.75),
+            rgba(15, 23, 42, 0.75)
+          ),
+          url("https://i.postimg.cc/ZKvDrWCj/1d3dae9ca95228b0df542be7c1a1980e.jpg");
+        background-size: cover;
+        background-position: center;
+      }
+      .gallery-item {
+        transition: all 0.3s ease;
+      }
 
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(10px); }
-            to { opacity: 1; transform: translateY(0); }
+      /* Hero Background Overlay */
+      .hero-overlay {
+        background: linear-gradient(
+            rgba(15, 23, 42, 0.7),
+            rgba(15, 23, 42, 0.7)
+          ),
+          url("https://i.postimg.cc/ZKvDrWCj/1d3dae9ca95228b0df542be7c1a1980e.jpg");
+        background-size: cover;
+        background-position: center;
+      }
+
+      /* Animation for Gallery Filtering */
+      .gallery-item {
+        transition: all 0.4s ease-in-out;
+      }
+
+      .fade-in {
+        animation: fadeIn 0.5s forwards;
+      }
+
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+          transform: translateY(10px);
         }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
     </style>
-
-</head>
-<body class="font-sans text-slate-900 bg-white">
-
-
-
-<nav class="fixed w-full z-50 bg-navy/90 backdrop-blur-md text-white py-6 shadow-lg">
-    <div class="max-w-6xl mx-auto px-6 flex justify-center items-center">
-    
-        <div class="flex flex-wrap justify-center items-center space-x-6 md:space-x-12 text-[10px] md:text-xs font-bold uppercase tracking-[0.3em]">
-            <a href="#rates" class="hover:text-blue-400 transition-colors duration-300">Rates</a>
-            <a href="#about" class="hover:text-blue-400 transition-colors duration-300">Inclusions</a>
-            <a href="#availability" class="hover:text-blue-400 transition-colors duration-300 flex items-center gap-2">
-                <span class="w-1.5 h-1.5 bg-blue-500 rounded-full animate-pulse"></span>
-                Calendar
-            </a>
-            <a href="#gallery" class="hover:text-blue-400 transition-colors duration-300">Gallery</a>
-            <a href="#location" class="hover:text-blue-400 transition-colors duration-300">Location</a>
+  </head>
+  <body class="font-sans text-slate-900 bg-white">
+    <nav
+      class="fixed w-full z-50 bg-navy/90 backdrop-blur-md text-white py-6 shadow-lg"
+    >
+      <div class="max-w-6xl mx-auto px-6 flex justify-center items-center">
+        <div
+          class="flex flex-wrap justify-center items-center space-x-6 md:space-x-12 text-[10px] md:text-xs font-bold uppercase tracking-[0.3em]"
+        >
+          <a
+            href="#rates"
+            class="hover:text-blue-400 transition-colors duration-300"
+            >Rates</a
+          >
+          <a
+            href="#about"
+            class="hover:text-blue-400 transition-colors duration-300"
+            >Inclusions</a
+          >
+          <a
+            href="#availability"
+            class="hover:text-blue-400 transition-colors duration-300 flex items-center gap-2"
+          >
+            <span
+              class="w-1.5 h-1.5 bg-green-500 rounded-full animate-pulse"
+            ></span>
+            Calendar
+          </a>
+          <a
+            href="#gallery"
+            class="hover:text-blue-400 transition-colors duration-300"
+            >Gallery</a
+          >
+          <a
+            href="#location"
+            class="hover:text-blue-400 transition-colors duration-300"
+            >Location</a
+          >
         </div>
-    </div>
-</nav>
+      </div>
+    </nav>
 
+    <!--------------- Hero -------------------->
 
-<!--------------- Hero -------------------->
-
-    <section class="hero-overlay h-[60vh] flex items-center justify-center text-center text-white px-4 shadow-lg">
-        <div class="mt-12">
-            <h2 class="text-4xl md:text-6xl font-serif italic mb-2">Casa Cinderella</h2>
-            <p class="text-sm md:text-lg mb-8 font-light tracking-[0.4em] uppercase">Private Resort</p>
-            <a href="#about" class="bg-white text-[#0f172a] px-8 py-3 rounded-full font-bold uppercase text-[10px] tracking-widest hover:bg-slate-200 transition">Explore</a>
-        </div>
-    </section>
-    
-    
-<!--------------- Hero -------------------->  
-    
-    <div class="bg-blue-600 py-3 px-6 shadow-inner relative z-10">
-    <div class="max-w-6xl mx-auto flex items-center justify-center gap-3">
-        <span class="relative flex h-2 w-2">
-            <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-200 opacity-75"></span>
-            <span class="relative inline-flex rounded-full h-2 w-2 bg-green-600"></span>
-        </span>
-        
-        <p class="text-[9px] md:text-[11px] font-md uppercase tracking-[0.2em] text-white text-center leading-relaxed">
-            We are continuously updating our website for your better experience.
+    <section
+      class="hero-overlay h-[60vh] flex items-center justify-center text-center text-white px-4 shadow-lg"
+    >
+      <div class="mt-12">
+        <h2 class="text-4xl md:text-6xl font-serif italic mb-2">
+          Casa Cinderella
+        </h2>
+        <p
+          class="text-sm md:text-lg mb-8 font-light tracking-[0.4em] uppercase"
+        >
+          Private Resort
         </p>
+        <a
+          href="#about"
+          class="bg-white text-[#0f172a] px-8 py-3 rounded-full font-bold uppercase text-[10px] tracking-widest hover:bg-slate-200 transition"
+          >Explore</a
+        >
+      </div>
+    </section>
+
+    <!--------------- Hero -------------------->
+
+    <div class="bg-blue-600 py-3 px-6 shadow-inner relative z-10">
+      <div class="max-w-6xl mx-auto flex items-center justify-center gap-3">
+        <span class="relative flex h-2 w-2">
+          <span
+            class="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-200 opacity-75"
+          ></span>
+          <span
+            class="relative inline-flex rounded-full h-2 w-2 bg-green-600"
+          ></span>
+        </span>
+
+        <p
+          class="text-[9px] md:text-[11px] font-md uppercase tracking-[0.2em] text-white text-center leading-relaxed"
+        >
+          We are continuously updating our website for your better experience.
+        </p>
+      </div>
     </div>
-</div>
-    
-<!--------------- Rates -------------------->
 
-<section id="rates" class="py-16 bg-gradient-to-b from-white to-slate-100">
-    <div class="max-w-6xl mx-auto px-4">
-    
-<!--------------- Stay Options -------------------->
-        
+    <!--------------- Rates -------------------->
+
+    <section id="rates" class="py-16 bg-gradient-to-b from-white to-slate-100">
+      <div class="max-w-6xl mx-auto px-4">
+        <!--------------- Stay Options -------------------->
+
         <div class="text-center mb-10">
-            <h3 class="text-3xl font-serif italic text-[#0f172a]">Stay Options</h3>
-            <p class="text-[8px] tracking-[0.3em] uppercase text-blue-600 font-black">Choose your experience</p>
+          <h3 class="text-3xl font-serif italic text-[#0f172a]">
+            Stay Options
+          </h3>
+          <p
+            class="text-[8px] tracking-[0.3em] uppercase text-blue-600 font-black"
+          >
+            Choose your experience
+          </p>
         </div>
-        
-<!--------------- Weekday -------------------->
 
-<div class="mb-12">
-<h4 class="text-[9px] font-black tracking-[0.2em] uppercase text-slate-400 mb-6 text-center">— Weekday (Mon-Thu) —</h4>
-            
-<div class="grid grid-cols-3 gap-2 md:gap-4 items-stretch">
-                
-            
-<div class="bg-white/60 backdrop-blur-md border border-white/40 p-3 md:p-6 rounded-xl shadow-sm text-center flex flex-col justify-center hover:shadow-xl hover:-translate-y-2 transition-all duration-500 text-center">
-                    <p class="text-[7px] md:text-[9px] font-black uppercase text-slate-500 mb-1">Day</p>
-                    <p class="text-xs md:text-2xl font-bold text-slate-900">₱6,499</p>
-                    <div class="mt-3 py-1 px-2 bg-slate-100 rounded-lg inline-block text-[7px] md:text-[10px] text-slate-500 font-bold uppercase">8am — 6pm</div>
-                </div>
-                
+        <!--------------- Weekday -------------------->
 
-<div class="relative bg-slate-900/90 backdrop-blur-xl border border-white/20 p-3 md:p-8 rounded-2xl shadow-xl text-center transform scale-105 z-10 flex flex-col justify-center">
-    
-<div class="absolute -top-3 left-1/2 -translate-x-1/2 whitespace-nowrap bg-lime-500 text-white text-[8px] md:text-[10px] font-black px-4 py-1 rounded-full uppercase tracking-widest shadow-lg animate-pulse">
-    Best value
-</div>
-    
-    <p class="text-[8px] md:text-[10px] font-black uppercase text-blue-300 mb-1">22-Hr</p>
-    <p class="text-sm md:text-3xl font-black text-lime-300">₱12,499</p>
-    <p class="text-[8px] md:text-[9px] text-blue-300 font-bold uppercase mt-1">Full Stay</p>
-</div>
+        <div class="mb-12">
+          <h4
+            class="text-[9px] font-black tracking-[0.2em] uppercase text-slate-400 mb-6 text-center"
+          >
+            — Weekday (Mon-Thu) —
+          </h4>
 
-                <div class="bg-white/60 backdrop-blur-md border border-white/40 p-3 md:p-6 rounded-xl shadow-sm text-center flex flex-col justify-center hover:shadow-xl hover:-translate-y-2 transition-all duration-500 text-center">
-                    <p class="text-[7px] md:text-[9px] font-black uppercase text-slate-500 mb-1">Night</p>
-                    <p class="text-xs md:text-2xl font-bold text-slate-900">₱6,999</p>
-                    <div class="mt-3 py-1 px-2 bg-slate-100 rounded-lg inline-block text-[7px] md:text-[10px] text-slate-500 font-bold uppercase">8pm — 6am</div>
-                </div>
+          <div class="grid grid-cols-3 gap-2 md:gap-4 items-stretch">
+            <div
+              class="bg-white/60 backdrop-blur-md border border-white/40 p-3 md:p-6 rounded-xl shadow-sm text-center flex flex-col justify-center hover:shadow-xl hover:-translate-y-2 transition-all duration-500 text-center"
+            >
+              <p
+                class="text-[7px] md:text-[9px] font-black uppercase text-slate-500 mb-1"
+              >
+                Day
+              </p>
+              <p class="text-xs md:text-2xl font-bold text-slate-900">₱6,499</p>
+              <div
+                class="mt-3 py-1 px-2 bg-slate-100 rounded-lg inline-block text-[7px] md:text-[10px] text-slate-500 font-bold uppercase"
+              >
+                8am — 6pm
+              </div>
             </div>
+
+            <div
+              class="relative bg-slate-900/90 backdrop-blur-xl border border-white/20 p-3 md:p-8 rounded-2xl shadow-xl text-center transform scale-105 z-10 flex flex-col justify-center"
+            >
+              <div
+                class="absolute -top-3 left-1/2 -translate-x-1/2 whitespace-nowrap bg-lime-500 text-white text-[8px] md:text-[10px] font-black px-4 py-1 rounded-full uppercase tracking-widest shadow-lg animate-pulse"
+              >
+                Best value
+              </div>
+
+              <p
+                class="text-[8px] md:text-[10px] font-black uppercase text-blue-300 mb-1"
+              >
+                22-Hr
+              </p>
+              <p class="text-sm md:text-3xl font-black text-lime-300">
+                ₱12,499
+              </p>
+              <p
+                class="text-[8px] md:text-[9px] text-blue-300 font-bold uppercase mt-1"
+              >
+                Full Stay
+              </p>
+            </div>
+
+            <div
+              class="bg-white/60 backdrop-blur-md border border-white/40 p-3 md:p-6 rounded-xl shadow-sm text-center flex flex-col justify-center hover:shadow-xl hover:-translate-y-2 transition-all duration-500 text-center"
+            >
+              <p
+                class="text-[7px] md:text-[9px] font-black uppercase text-slate-500 mb-1"
+              >
+                Night
+              </p>
+              <p class="text-xs md:text-2xl font-bold text-slate-900">₱6,999</p>
+              <div
+                class="mt-3 py-1 px-2 bg-slate-100 rounded-lg inline-block text-[7px] md:text-[10px] text-slate-500 font-bold uppercase"
+              >
+                8pm — 6am
+              </div>
+            </div>
+          </div>
         </div>
-        
-<!--------------- Weekdend -------------------->
+
+        <!--------------- Weekdend -------------------->
 
         <div class="mb-8">
-            <h4 class="text-[9px] font-black tracking-[0.2em] uppercase text-slate-400 mb-6 text-center">— Weekend & Holidays —</h4>
-            
-            <div class="grid grid-cols-3 gap-2 md:gap-4 items-stretch">
-            
-                <div class="bg-white/60 backdrop-blur-md border border-white/40 p-3 md:p-6 rounded-xl shadow-sm text-center flex flex-col justify-center hover:shadow-xl hover:-translate-y-2 transition-all duration-500 text-center">
-                    <p class="text-[7px] md:text-[9px] font-black uppercase text-slate-500 mb-1">Day</p>
-                    <p class="text-xs md:text-2xl font-bold text-slate-900">₱8,499</p>
-                    <div class="mt-3 py-1 px-2 bg-slate-100 rounded-lg inline-block text-[7px] md:text-[10px] text-slate-500 font-bold uppercase">8am — 6pm</div>
-                </div>
+          <h4
+            class="text-[9px] font-black tracking-[0.2em] uppercase text-slate-400 mb-6 text-center"
+          >
+            — Weekend & Holidays —
+          </h4>
 
-<div class="relative bg-gray-100 backdrop-blur-xl border border-white/20 p-3 md:p-8 rounded-2xl shadow-xl text-center transform scale-105 z-10 flex flex-col justify-center">
-
-<div class="absolute -top-3 left-1/2 -translate-x-1/2 whitespace-nowrap bg-[#D2AF26] text-white text-[8px] md:text-[10px] font-black px-4 py-1 rounded-full uppercase tracking-widest shadow-lg">
-    Most Popular
-</div>
-                    
-    <p class="text-[8px] md:text-[10px] font-black uppercase text-blue-600 mb-1">22-Hr</p>
-    <p class="text-sm md:text-3xl font-black text-red-500">₱15,499</p>
-    <p class="text-[8px] md:text-[10px] text-blue-600 font-bold uppercase mt-1">Full Stay</p>
-</div>
-                <div class="bg-white/60 backdrop-blur-md border border-white/40 p-3 md:p-6 rounded-xl shadow-sm text-center flex flex-col justify-center hover:shadow-xl hover:-translate-y-2 transition-all duration-500 text-center">
-                    <p class="text-[7px] md:text-[9px] font-black uppercase text-slate-500 mb-1">Night</p>
-                    <p class="text-xs md:text-2xl font-bold text-slate-900">₱9,499</p>
-                    <div class="mt-3 py-1 px-2 bg-slate-100 rounded-lg inline-block text-[7px] md:text-[10px] text-slate-500 font-bold uppercase">8pm — 6am</div>
-                </div>
+          <div class="grid grid-cols-3 gap-2 md:gap-4 items-stretch">
+            <div
+              class="bg-white/60 backdrop-blur-md border border-white/40 p-3 md:p-6 rounded-xl shadow-sm text-center flex flex-col justify-center hover:shadow-xl hover:-translate-y-2 transition-all duration-500 text-center"
+            >
+              <p
+                class="text-[7px] md:text-[9px] font-black uppercase text-slate-500 mb-1"
+              >
+                Day
+              </p>
+              <p class="text-xs md:text-2xl font-bold text-slate-900">₱8,499</p>
+              <div
+                class="mt-3 py-1 px-2 bg-slate-100 rounded-lg inline-block text-[7px] md:text-[10px] text-slate-500 font-bold uppercase"
+              >
+                8am — 6pm
+              </div>
             </div>
+
+            <div
+              class="relative bg-gray-100 backdrop-blur-xl border border-white/20 p-3 md:p-8 rounded-2xl shadow-xl text-center transform scale-105 z-10 flex flex-col justify-center"
+            >
+              <div
+                class="absolute -top-3 left-1/2 -translate-x-1/2 whitespace-nowrap bg-[#D2AF26] text-white text-[8px] md:text-[10px] font-black px-4 py-1 rounded-full uppercase tracking-widest shadow-lg"
+              >
+                Most Popular
+              </div>
+
+              <p
+                class="text-[8px] md:text-[10px] font-black uppercase text-blue-600 mb-1"
+              >
+                22-Hr
+              </p>
+              <p class="text-sm md:text-3xl font-black text-red-500">₱15,499</p>
+              <p
+                class="text-[8px] md:text-[10px] text-blue-600 font-bold uppercase mt-1"
+              >
+                Full Stay
+              </p>
+            </div>
+            <div
+              class="bg-white/60 backdrop-blur-md border border-white/40 p-3 md:p-6 rounded-xl shadow-sm text-center flex flex-col justify-center hover:shadow-xl hover:-translate-y-2 transition-all duration-500 text-center"
+            >
+              <p
+                class="text-[7px] md:text-[9px] font-black uppercase text-slate-500 mb-1"
+              >
+                Night
+              </p>
+              <p class="text-xs md:text-2xl font-bold text-slate-900">₱9,499</p>
+              <div
+                class="mt-3 py-1 px-2 bg-slate-100 rounded-lg inline-block text-[7px] md:text-[10px] text-slate-500 font-bold uppercase"
+              >
+                8pm — 6am
+              </div>
+            </div>
+          </div>
         </div>
 
-<!--------------- Rates subject to change -------------------->
-         
-  
-<div class="max-w-2xl mx-auto">
-<div class="p-4 rounded-2xl flex items-center justify-center gap-4">
-                <i class="fas fa-circle-exclamation text-red-600"></i>
-                <p class="text-[10px] font-medium text-slate-600 uppercase tracking-widest">
-                    RATES SUBJECT TO CHANGE WITHOUT PRIOR NOTICE.
-                </p>
-            </div>
-      
+        <!--------------- Rates subject to change -------------------->
+
+        <div class="max-w-2xl mx-auto">
+          <div class="p-4 rounded-2xl flex items-center justify-center gap-4">
+            <i class="fas fa-circle-exclamation text-red-600"></i>
+            <p
+              class="text-[10px] font-medium text-slate-600 uppercase tracking-widest"
+            >
+              RATES SUBJECT TO CHANGE WITHOUT PRIOR NOTICE.
+            </p>
+          </div>
         </div>
-    </div>
-</section>
+      </div>
+    </section>
 
+    <!--------------- Inclusions -------------------->
 
-<!--------------- Inclusions -------------------->
+    <section id="about" class="relative z-10 py-24 bg-[#0f172a] text-white">
+      <div class="max-w-6xl mx-auto px-6">
+        <h3
+          class="text-3xl font-md text-center mb-16 uppercase tracking-[0.3em]"
+        >
+          INCLUSIONS
+        </h3>
 
-<section id="about" class="relative z-10 py-24 bg-[#0f172a] text-white">
-
-    <div class="max-w-6xl mx-auto px-6">
-        <h3 class="text-3xl font-md text-center mb-16 uppercase tracking-[0.3em]">INCLUSIONS</h3>
-        
-        <div class="grid grid-cols-2 md:grid-cols-4 gap-y-16 gap-x-8 text-center mb-20">
-            <div class="group flex flex-col items-center">
-                <i class="fas fa-swimming-pool text-4xl text-blue-400 mb-4 transition-transform group-hover:scale-110"></i>
-                <p class="text-xs font-bold uppercase tracking-widest text-slate-200">Private Pool & Lights</p>
-            </div>
-            <div class="group flex flex-col items-center">
-                <i class="fas fa-bed text-4xl text-blue-400 mb-4 transition-transform group-hover:scale-110"></i>
-                <p class="text-xs font-bold uppercase tracking-widest text-slate-200">Guest Room (4 Beds)</p>
-            </div>
-            <div class="group flex flex-col items-center">
-                <i class="fas fa-car text-4xl text-blue-400 mb-4 transition-transform group-hover:scale-110"></i>
-                <p class="text-xs font-bold uppercase tracking-widest text-slate-200">Gated Parking (5 Cars)</p>
-            </div>
-            <div class="group flex flex-col items-center">
-                <i class="fas fa-home text-4xl text-blue-400 mb-4 transition-transform group-hover:scale-110"></i>
-                <p class="text-xs font-bold uppercase tracking-widest text-slate-200">Big & Small Gazebos</p>
-            </div>
-            <div class="group flex flex-col items-center">
-                <i class="fas fa-chair text-4xl text-blue-400 mb-4 transition-transform group-hover:scale-110"></i>
-                <p class="text-xs font-bold uppercase tracking-widest text-slate-200">Tables & Benches</p>
-            </div>
-            <div class="group flex flex-col items-center">
-                <i class="fas fa-shower text-4xl text-blue-400 mb-4 transition-transform group-hover:scale-110"></i>
-                <p class="text-xs font-bold uppercase tracking-widest text-slate-200">Outdoor Shower & Toilet</p>
-            </div>
-            <div class="group flex flex-col items-center">
-                <i class="fas fa-utensils text-4xl text-blue-400 mb-4 transition-transform group-hover:scale-110"></i>
-                <p class="text-xs font-bold uppercase tracking-widest text-slate-200">Sink & Grill</p>
-            </div>
-            <div class="group flex flex-col items-center">
-                <i class="fas fa-tv text-4xl text-blue-400 mb-4 transition-transform group-hover:scale-110"></i>
-                <p class="text-xs font-bold uppercase tracking-widest text-slate-200">TV & Refrigerator</p>
-            </div>
+        <div
+          class="grid grid-cols-2 md:grid-cols-4 gap-y-16 gap-x-8 text-center mb-20"
+        >
+          <div class="group flex flex-col items-center">
+            <i
+              class="fas fa-swimming-pool text-4xl text-blue-400 mb-4 transition-transform group-hover:scale-110"
+            ></i>
+            <p
+              class="text-xs font-bold uppercase tracking-widest text-slate-200"
+            >
+              Private Pool & Lights
+            </p>
+          </div>
+          <div class="group flex flex-col items-center">
+            <i
+              class="fas fa-bed text-4xl text-blue-400 mb-4 transition-transform group-hover:scale-110"
+            ></i>
+            <p
+              class="text-xs font-bold uppercase tracking-widest text-slate-200"
+            >
+              Guest Room (4 Beds)
+            </p>
+          </div>
+          <div class="group flex flex-col items-center">
+            <i
+              class="fas fa-car text-4xl text-blue-400 mb-4 transition-transform group-hover:scale-110"
+            ></i>
+            <p
+              class="text-xs font-bold uppercase tracking-widest text-slate-200"
+            >
+              Gated Parking (5 Cars)
+            </p>
+          </div>
+          <div class="group flex flex-col items-center">
+            <i
+              class="fas fa-home text-4xl text-blue-400 mb-4 transition-transform group-hover:scale-110"
+            ></i>
+            <p
+              class="text-xs font-bold uppercase tracking-widest text-slate-200"
+            >
+              Big & Small Gazebos
+            </p>
+          </div>
+          <div class="group flex flex-col items-center">
+            <i
+              class="fas fa-chair text-4xl text-blue-400 mb-4 transition-transform group-hover:scale-110"
+            ></i>
+            <p
+              class="text-xs font-bold uppercase tracking-widest text-slate-200"
+            >
+              Tables & Benches
+            </p>
+          </div>
+          <div class="group flex flex-col items-center">
+            <i
+              class="fas fa-shower text-4xl text-blue-400 mb-4 transition-transform group-hover:scale-110"
+            ></i>
+            <p
+              class="text-xs font-bold uppercase tracking-widest text-slate-200"
+            >
+              Outdoor Shower & Toilet
+            </p>
+          </div>
+          <div class="group flex flex-col items-center">
+            <i
+              class="fas fa-utensils text-4xl text-blue-400 mb-4 transition-transform group-hover:scale-110"
+            ></i>
+            <p
+              class="text-xs font-bold uppercase tracking-widest text-slate-200"
+            >
+              Sink & Grill
+            </p>
+          </div>
+          <div class="group flex flex-col items-center">
+            <i
+              class="fas fa-tv text-4xl text-blue-400 mb-4 transition-transform group-hover:scale-110"
+            ></i>
+            <p
+              class="text-xs font-bold uppercase tracking-widest text-slate-200"
+            >
+              TV & Refrigerator
+            </p>
+          </div>
         </div>
 
         <div class="border-t border-white/10 pt-16">
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
-                <div class="p-4 bg-white/5 rounded-2xl border border-white/5 hover:bg-white/10 transition-colors">
-                    <i class="fas fa-users text-2xl text-blue-400 mb-3"></i>
-                    <p class="text-[10px] leading-relaxed uppercase tracking-widest text-slate-300">Up to 25 Pax<br><span class="text-blue-400 font-bold">₱150/excess</span></p>
-                </div>
-                <div class="p-4 bg-white/5 rounded-2xl border border-white/5 hover:bg-white/10 transition-colors">
-                    <i class="fas fa-paw text-2xl text-blue-400 mb-3"></i>
-                    <p class="text-[10px] leading-relaxed uppercase tracking-widest text-slate-300">Pets allowed<br><span class="opacity-50 text-[9px] italic">(except pool)</span></p>
-                </div>
-                <div class="p-4 bg-white/5 rounded-2xl border border-white/5 hover:bg-white/10 transition-colors">
-                    <i class="fas fa-ban text-2xl text-blue-400 mb-3"></i>
-                    <p class="text-[10px] leading-relaxed uppercase tracking-widest text-slate-300">No Corkage<br><span class="text-blue-400 font-bold">Fees</span></p>
-                </div>
-                <div class="p-4 bg-white/5 rounded-2xl border border-white/5 hover:bg-white/10 transition-colors">
-                    <i class="fas fa-music text-2xl text-blue-400 mb-3"></i>
-                    <p class="text-[10px] leading-relaxed uppercase tracking-widest text-slate-300">Entertainment<br><span class="text-blue-400 font-bold">Allowed</span></p>
-                </div>
+          <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+            <div
+              class="p-4 bg-white/5 rounded-2xl border border-white/5 hover:bg-white/10 transition-colors"
+            >
+              <i class="fas fa-users text-2xl text-blue-400 mb-3"></i>
+              <p
+                class="text-[10px] leading-relaxed uppercase tracking-widest text-slate-300"
+              >
+                Up to 25 Pax<br /><span class="text-blue-400 font-bold"
+                  >₱150/excess</span
+                >
+              </p>
             </div>
+            <div
+              class="p-4 bg-white/5 rounded-2xl border border-white/5 hover:bg-white/10 transition-colors"
+            >
+              <i class="fas fa-paw text-2xl text-blue-400 mb-3"></i>
+              <p
+                class="text-[10px] leading-relaxed uppercase tracking-widest text-slate-300"
+              >
+                Pets allowed<br /><span class="opacity-50 text-[9px] italic"
+                  >(except pool)</span
+                >
+              </p>
+            </div>
+            <div
+              class="p-4 bg-white/5 rounded-2xl border border-white/5 hover:bg-white/10 transition-colors"
+            >
+              <i class="fas fa-ban text-2xl text-blue-400 mb-3"></i>
+              <p
+                class="text-[10px] leading-relaxed uppercase tracking-widest text-slate-300"
+              >
+                No Corkage<br /><span class="text-blue-400 font-bold"
+                  >Fees</span
+                >
+              </p>
+            </div>
+            <div
+              class="p-4 bg-white/5 rounded-2xl border border-white/5 hover:bg-white/10 transition-colors"
+            >
+              <i class="fas fa-music text-2xl text-blue-400 mb-3"></i>
+              <p
+                class="text-[10px] leading-relaxed uppercase tracking-widest text-slate-300"
+              >
+                Entertainment<br /><span class="text-blue-400 font-bold"
+                  >Allowed</span
+                >
+              </p>
+            </div>
+          </div>
         </div>
-    </div>
-</section>
+      </div>
+    </section>
 
-    
-<!--------------- Additional rooms availment -------------------->
-    
+    <!--------------- Additional rooms availment -------------------->
+
     <div class="max-w-6xl mx-auto mt-12 px-4">
-    <div class="flex flex-col md:flex-row items-center gap-8 lg:gap-12">
-        
+      <div class="flex flex-col md:flex-row items-center gap-8 lg:gap-12">
         <div class="w-full md:w-1/2">
-            <div class="bg-white/40 backdrop-blur-md border border-blue-200/50 p-5 rounded-[2rem] shadow-sm">
-                <div class="flex items-center justify-between mb-4">
-                    <div class="flex items-center gap-3">
-                        <div class="bg-pink-600 text-white p-2 rounded-lg">
-                            <i class="fas fa-heart text-xs"></i>
-                        </div>
-                        <div>
-                            <p class="text-[10px] font-black text-[#0f172a] uppercase tracking-tight">Couple Rooms</p>
-                            <p class="text-[11px] text-slate-500 uppercase tracking-tighter">Private space for 2 pax</p>
-                        </div>
-                    </div>
-                    <div class="text-right">
-                        <p class="text-lg font-black text-pink-600 tracking-tighter">₱x,000</p>
-                        <p class="text-[7px] text-slate-400 uppercase font-bold">Per Room</p>
-                    </div>
+          <div
+            class="bg-white/40 backdrop-blur-md border border-blue-200/50 p-5 rounded-[2rem] shadow-sm"
+          >
+            <div class="flex items-center justify-between mb-4">
+              <div class="flex items-center gap-3">
+                <div class="bg-pink-600 text-white p-2 rounded-lg">
+                  <i class="fas fa-heart text-xs"></i>
                 </div>
-
-                <div class="grid grid-cols-3 gap-2">
-                    <div class="aspect-square rounded-xl overflow-hidden shadow-sm border border-white/40 hover:scale-105 transition-transform">
-                        <img src="https://i.postimg.cc/v1vXhqcK/att-ny-LKBbw-Agex-T5Ly-JLe-Nag-O5SGv-L1Cmk-VNeo-QOq7z3LE.jpg" class="w-full h-full object-cover" alt="Couple Room">
-                    </div>
-                    <div class="aspect-square rounded-xl overflow-hidden shadow-sm border border-white/40 hover:scale-105 transition-transform">
-                        <img src="https://i.postimg.cc/sQDmNYh0/att-p-Z2Dax-Bs-ANCFuzt-Rlr1pjlc-KH1Bw-Uk3Akygr-Lvn7X8g.jpg" class="w-full h-full object-cover" alt="Couple Room CR">
-                    </div>
-                    <div class="aspect-square rounded-xl overflow-hidden shadow-sm border border-white/40 hover:scale-105 transition-transform">
-                        <img src="https://i.postimg.cc/Z9LjH7CM/att-Har-K7BL54zm1Inw-Thg7Bi8ny6er-Wi-Co-D3WOj6e9Dt0s.jpg" class="w-full h-full object-cover" alt="Couple Room Shower">
-                    </div>
+                <div>
+                  <p
+                    class="text-[10px] font-black text-[#0f172a] uppercase tracking-tight"
+                  >
+                    Couple Rooms
+                  </p>
+                  <p
+                    class="text-[11px] text-slate-500 uppercase tracking-tighter"
+                  >
+                    Private space for 2 pax
+                  </p>
                 </div>
+              </div>
+              <div class="text-right">
+                <p class="text-lg font-black text-pink-600 tracking-tighter">
+                  ₱x,000
+                </p>
+                <p class="text-[7px] text-slate-400 uppercase font-bold">
+                  Per Room
+                </p>
+              </div>
             </div>
+
+            <div class="grid grid-cols-3 gap-2">
+              <div
+                class="aspect-square rounded-xl overflow-hidden shadow-sm border border-white/40 hover:scale-105 transition-transform"
+              >
+                <img
+                  src="https://i.postimg.cc/v1vXhqcK/att-ny-LKBbw-Agex-T5Ly-JLe-Nag-O5SGv-L1Cmk-VNeo-QOq7z3LE.jpg"
+                  class="w-full h-full object-cover"
+                  alt="Couple Room"
+                />
+              </div>
+              <div
+                class="aspect-square rounded-xl overflow-hidden shadow-sm border border-white/40 hover:scale-105 transition-transform"
+              >
+                <img
+                  src="https://i.postimg.cc/sQDmNYh0/att-p-Z2Dax-Bs-ANCFuzt-Rlr1pjlc-KH1Bw-Uk3Akygr-Lvn7X8g.jpg"
+                  class="w-full h-full object-cover"
+                  alt="Couple Room CR"
+                />
+              </div>
+              <div
+                class="aspect-square rounded-xl overflow-hidden shadow-sm border border-white/40 hover:scale-105 transition-transform"
+              >
+                <img
+                  src="https://i.postimg.cc/Z9LjH7CM/att-Har-K7BL54zm1Inw-Thg7Bi8ny6er-Wi-Co-D3WOj6e9Dt0s.jpg"
+                  class="w-full h-full object-cover"
+                  alt="Couple Room Shower"
+                />
+              </div>
+            </div>
+          </div>
         </div>
 
         <div class="w-full md:w-1/2 text-center md:text-left">
-            <span class="bg-blue-600 text-white text-[9px] font-black px-4 py-1 rounded-full uppercase tracking-widest mb-4 inline-block">Premium Upgrade</span>
-            
-            <h4 class="text-2xl md:text-3xl font-serif italic text-[#0f172a] mb-4">Need more space?</h4>
-            
-            <p class="text-slate-600 text-sm leading-relaxed mb-6">
-                Our standard rate includes one main guest room. <br class="hidden md:block">
-                <span class="font-bold text-[#0f172a]">Additional rooms can be availed at an extra rate</span> <br class="hidden md:block">
-                to accommodate larger groups comfortably.
+          <span
+            class="bg-blue-600 text-white text-[9px] font-black px-4 py-1 rounded-full uppercase tracking-widest mb-4 inline-block"
+            >Premium Upgrade</span
+          >
+
+          <h4
+            class="text-2xl md:text-3xl font-serif italic text-[#0f172a] mb-4"
+          >
+            Need more space?
+          </h4>
+
+          <p class="text-slate-600 text-sm leading-relaxed mb-6">
+            Our standard rate includes one main guest room.
+            <br class="hidden md:block" />
+            <span class="font-bold text-[#0f172a]"
+              >Additional rooms can be availed at an extra rate</span
+            >
+            <br class="hidden md:block" />
+            to accommodate larger groups comfortably.
+          </p>
+
+          <div
+            class="inline-flex items-center gap-2 text-[#0f172a] font-bold text-[10px] uppercase tracking-widest border-b border-[#0f172a] pb-1 cursor-help hover:text-blue-600 hover:border-blue-600 transition-all"
+          >
+            <i class="fas fa-info-circle text-blue-600"></i> Inquire for
+            specific room rates
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!--------------- resort gallery -------------------->
+
+    <section id="gallery" class="py-20 bg-white px-6">
+      <div class="max-w-6xl mx-auto">
+        <h3
+          class="text-3xl font-md text-[#0f172a] text-center mb-12 uppercase tracking-widest"
+        >
+          Resort Gallery
+        </h3>
+        <div class="flex flex-wrap justify-center gap-3 mb-10">
+          <button
+            onclick="filterGallery('all')"
+            class="g-btn bg-[#0f172a] text-white px-6 py-2 rounded-full text-[10px] font-bold uppercase transition"
+          >
+            All
+          </button>
+
+          <button
+            onclick="filterGallery('pool')"
+            class="g-btn bg-slate-100 px-6 py-2 rounded-full text-[10px] font-medium uppercase transition"
+          >
+            Pool Area
+          </button>
+
+          <button
+            onclick="filterGallery('room')"
+            class="g-btn bg-slate-100 px-6 py-2 rounded-full text-[10px] font-bold uppercase transition"
+          >
+            Guest Room
+          </button>
+
+          <button
+            onclick="filterGallery('coupleroom')"
+            class="g-btn bg-slate-100 px-6 py-2 rounded-full text-[10px] font-bold uppercase transition"
+          >
+            Couple Rooms
+          </button>
+
+          <button
+            onclick="filterGallery('parking')"
+            class="g-btn bg-slate-100 px-6 py-2 rounded-full text-[10px] font-bold uppercase transition"
+          >
+            Parking Area
+          </button>
+
+          <button
+            onclick="filterGallery('gazebo')"
+            class="g-btn bg-slate-100 px-6 py-2 rounded-full text-[10px] font-bold uppercase transition"
+          >
+            Gazebos
+          </button>
+
+          <button
+            onclick="filterGallery('others')"
+            class="g-btn bg-slate-100 px-6 py-2 rounded-full text-[10px] font-bold uppercase transition"
+          >
+            Others
+          </button>
+        </div>
+
+        <!--------------- Pool Area -------------------->
+
+        <div class="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div
+            class="gallery-item pool block h-72 bg-slate-200 rounded-xl overflow-hidden shadow-md"
+          >
+            <img
+              src="https://i.postimg.cc/ZKvDrWCj/1d3dae9ca95228b0df542be7c1a1980e.jpg"
+              class="w-full h-full object-cover"
+            />
+          </div>
+
+          <div
+            class="gallery-item pool block h-72 bg-slate-200 rounded-xl overflow-hidden shadow-md"
+          >
+            <img
+              src="https://i.postimg.cc/tCQFph3V/Screenshot-2025-04-03-at-2-59-46-AM.png"
+              class="w-full h-full object-cover"
+            />
+          </div>
+
+          <div
+            class="gallery-item pool block h-72 bg-slate-200 rounded-xl overflow-hidden shadow-md"
+          >
+            <img
+              src="https://i.postimg.cc/63Cnvqw9/pool_area_on_red.png"
+              class="w-full h-full object-cover"
+            />
+          </div>
+
+          <div
+            class="gallery-item pool block h-72 bg-slate-200 rounded-xl overflow-hidden shadow-md"
+          >
+            <img
+              src="https://i.postimg.cc/Nfkb639r/IMG_8199_2.png"
+              class="w-full h-full object-cover"
+            />
+          </div>
+
+          <div
+            class="gallery-item pool block h-72 bg-slate-200 rounded-xl overflow-hidden shadow-md"
+          >
+            <img
+              src="https://i.postimg.cc/tRSvRvrv/Untitled-design-(3).png"
+              class="w-full h-full object-cover"
+            />
+          </div>
+
+          <div
+            class="gallery-item pool block h-72 bg-slate-200 rounded-xl overflow-hidden shadow-md"
+          >
+            <img
+              src="https://i.postimg.cc/sX0qSmR9/4.png"
+              class="w-full h-full object-cover"
+            />
+          </div>
+
+          <div
+            class="gallery-item pool block h-72 bg-slate-200 rounded-xl overflow-hidden shadow-md"
+          >
+            <img
+              src="https://i.postimg.cc/3wScgPqb/IMG_8226_2.png"
+              class="w-full h-full object-cover"
+            />
+          </div>
+          <div
+            class="gallery-item pool block h-72 bg-slate-200 rounded-xl overflow-hidden shadow-md"
+          >
+            <img
+              src="https://i.postimg.cc/nLxVDsGt/b59f000c5a9a8d1e63601227ba8b9499.jpg"
+              class="w-full h-full object-cover"
+            />
+          </div>
+          <div
+            class="gallery-item pool block h-72 bg-slate-200 rounded-xl overflow-hidden shadow-md"
+          >
+            <img
+              src="https://i.postimg.cc/wMSRKTGL/IMG_8266_2.png"
+              class="w-full h-full object-cover"
+            />
+          </div>
+          <div
+            class="gallery-item pool block h-72 bg-slate-200 rounded-xl overflow-hidden shadow-md"
+          >
+            <img
+              src="https://i.postimg.cc/c1hGHbxb/IMG_8204_2.png"
+              class="w-full h-full object-cover"
+            />
+          </div>
+
+          <div
+            class="gallery-item pool block h-72 bg-slate-200 rounded-xl overflow-hidden shadow-md"
+          >
+            <img
+              src="https://i.postimg.cc/7YpZqtCg/1f45454daa92c9a4d89d27e071e470e6.jpg"
+              class="w-full h-full object-cover"
+            />
+          </div>
+          <div
+            class="gallery-item pool block h-72 bg-slate-200 rounded-xl overflow-hidden shadow-md"
+          >
+            <img
+              src="https://i.postimg.cc/d0FQy7jV/db01bf2b88fe1347bb35e74d1d4140ce.jpg"
+              class="w-full h-full object-cover"
+            />
+          </div>
+
+          <div
+            class="gallery-item pool block h-72 bg-slate-200 rounded-xl overflow-hidden shadow-md"
+          >
+            <img
+              src="https://i.postimg.cc/T1n3Y5rB/7E97BDE1_65A4_419C_8102_F0AFF612374A.jpg"
+              class="w-full h-full object-cover"
+            />
+          </div>
+
+          <div
+            class="gallery-item pool block h-72 bg-slate-200 rounded-xl overflow-hidden shadow-md"
+          >
+            <img
+              src="https://i.postimg.cc/9X9MBKv4/C7845C40_47F5_454D_9824_8BEEC486795A.jpg"
+              class="w-full h-full object-cover"
+            />
+          </div>
+
+          <!--------------- Guest Room -------------------->
+
+          <div
+            class="gallery-item room block h-72 bg-slate-200 rounded-xl overflow-hidden shadow-md"
+          >
+            <img
+              src="https://i.postimg.cc/B6vG3TrN/796d998602ae5f030185c220208da79c.jpg"
+              class="w-full h-full object-cover"
+            />
+          </div>
+
+          <div
+            class="gallery-item room block h-72 bg-slate-200 rounded-xl overflow-hidden shadow-md"
+          >
+            <img
+              src="https://i.postimg.cc/ZYght9gx/6689d253a98a411127283f15cba983b3.jpg"
+              class="w-full h-full object-cover"
+            />
+          </div>
+
+          <div
+            class="gallery-item room block h-72 bg-slate-200 rounded-xl overflow-hidden shadow-md"
+          >
+            <img
+              src="https://i.postimg.cc/9QH506cQ/8327547f6e87d7c11ddcb170583c7935.jpg"
+              class="w-full h-full object-cover"
+            />
+          </div>
+
+          <div
+            class="gallery-item room block h-72 bg-slate-200 rounded-xl overflow-hidden shadow-md"
+          >
+            <img
+              src="https://i.postimg.cc/rmpLT1Bj/ba7ac7fed41f5360e46a429ecbd87d79.jpg"
+              class="w-full h-full object-cover"
+            />
+          </div>
+
+          <div
+            class="gallery-item room block h-72 bg-slate-200 rounded-xl overflow-hidden shadow-md"
+          >
+            <img
+              src="https://i.postimg.cc/KYm6rtk3/ece084c9f97bbae2b035ca9b23814951.jpg"
+              class="w-full h-full object-cover"
+            />
+          </div>
+
+          <div
+            class="gallery-item room block h-72 bg-slate-200 rounded-xl overflow-hidden shadow-md"
+          >
+            <img
+              src="https://i.postimg.cc/50tMJBhs/e46559dd2fcf56d68e36929d023f6b14.jpg"
+              class="w-full h-full object-cover"
+            />
+          </div>
+          <div
+            class="gallery-item room block h-72 bg-slate-200 rounded-xl overflow-hidden shadow-md"
+          >
+            <img
+              src="https://i.postimg.cc/rmpLT1Bh/449edb48c321ba64ab5ed0c1318a1a5e.jpg"
+              class="w-full h-full object-cover"
+            />
+          </div>
+
+          <div
+            class="gallery-item room block h-72 bg-slate-200 rounded-xl overflow-hidden shadow-md"
+          >
+            <img
+              src="https://i.postimg.cc/wjfBmB6g/IMG_8246_2.png"
+              class="w-full h-full object-cover"
+            />
+          </div>
+
+          <div
+            class="gallery-item room block h-72 bg-slate-200 rounded-xl overflow-hidden shadow-md"
+          >
+            <img
+              src="https://i.postimg.cc/CxPKqKF0/IMG_8243_2.png"
+              class="w-full h-full object-cover"
+            />
+          </div>
+          <div
+            class="gallery-item room block h-72 bg-slate-200 rounded-xl overflow-hidden shadow-md"
+          >
+            <img
+              src="https://i.postimg.cc/nhBcrK7T/8a4f466ab245085c9db1cad64afac210.jpg"
+              class="w-full h-full object-cover"
+            />
+          </div>
+
+          <!--------------- Couple Room -------------------->
+          <div
+            class="gallery-item coupleroom block h-72 bg-slate-200 rounded-xl overflow-hidden shadow-md"
+          >
+            <img
+              src="https://i.postimg.cc/gj32kLv5/couple_rooms_hallway.jpg"
+              class="w-full h-full object-cover"
+            />
+          </div>
+
+          <div
+            class="gallery-item coupleroom block h-72 bg-slate-200 rounded-xl overflow-hidden shadow-md"
+          >
+            <img
+              src="https://i.postimg.cc/jWhvcgL9/att-k4c3C9x-JLi-YRl90xn-M4y7U0y15GMXFPsz1yw61w-Iew.jpg"
+              class="w-full h-full object-cover"
+            />
+          </div>
+
+          <div
+            class="gallery-item coupleroom block h-72 bg-slate-200 rounded-xl overflow-hidden shadow-md"
+          >
+            <img
+              src="https://i.postimg.cc/v1vXhqcK/att-ny-LKBbw-Agex-T5Ly-JLe-Nag-O5SGv-L1Cmk-VNeo-QOq7z3LE.jpg"
+              class="w-full h-full object-cover"
+            />
+          </div>
+
+          <div
+            class="gallery-item coupleroom block h-72 bg-slate-200 rounded-xl overflow-hidden shadow-md"
+          >
+            <img
+              src="https://i.postimg.cc/TLY04VD9/att-p-KVEs83e-Ped8S2u-MGzed-K8g-PHl9g-Yep-Pn-VJF2Oo-M4c.jpg"
+              class="w-full h-full object-cover"
+            />
+          </div>
+
+          <div
+            class="gallery-item coupleroom block h-72 bg-slate-200 rounded-xl overflow-hidden shadow-md"
+          >
+            <img
+              src="https://i.postimg.cc/CBL7QGqc/att-p-WC7Ff-FS8fm2Fv6z-Y9-h1HTEaecfzp4PMp-Lp-SNi-Hd-Wk.jpg"
+              class="w-full h-full object-cover"
+            />
+          </div>
+
+          <div
+            class="gallery-item coupleroom block h-72 bg-slate-200 rounded-xl overflow-hidden shadow-md"
+          >
+            <img
+              src="https://i.postimg.cc/sQDmNYh0/att-p-Z2Dax-Bs-ANCFuzt-Rlr1pjlc-KH1Bw-Uk3Akygr-Lvn7X8g.jpg"
+              class="w-full h-full object-cover"
+            />
+          </div>
+
+          <div
+            class="gallery-item coupleroom block h-72 bg-slate-200 rounded-xl overflow-hidden shadow-md"
+          >
+            <img
+              src="https://i.postimg.cc/Z9LjH7CM/att-Har-K7BL54zm1Inw-Thg7Bi8ny6er-Wi-Co-D3WOj6e9Dt0s.jpg"
+              class="w-full h-full object-cover"
+            />
+          </div>
+
+          <!--------------- Parking Area -------------------->
+
+          <div
+            class="gallery-item parking block h-72 bg-slate-200 rounded-xl overflow-hidden shadow-md"
+          >
+            <img
+              src="https://i.postimg.cc/gkcG2Cfv/IMG_8271_3.png"
+              class="w-full h-full object-cover"
+            />
+          </div>
+
+          <div
+            class="gallery-item parking block h-72 bg-slate-200 rounded-xl overflow-hidden shadow-md"
+          >
+            <img
+              src="https://i.postimg.cc/sX2bv8bG/3.png"
+              class="w-full h-full object-cover"
+            />
+          </div>
+
+          <!--------------- Gazebos -------------------->
+          <div
+            class="gallery-item gazebo block h-72 bg-slate-200 rounded-xl overflow-hidden shadow-md"
+          >
+            <img
+              src="https://i.postimg.cc/Fz0Hskj6/big_g_1.jpg"
+              class="w-full h-full object-cover"
+            />
+          </div>
+
+          <div
+            class="gallery-item gazebo block h-72 bg-slate-200 rounded-xl overflow-hidden shadow-md"
+          >
+            <img
+              src="https://i.postimg.cc/d0FQy7jq/d732908b49ab814c4cb3f5925a458b93.jpg"
+              class="w-full h-full object-cover"
+            />
+          </div>
+
+          <div
+            class="gallery-item gazebo block h-72 bg-slate-200 rounded-xl overflow-hidden shadow-md"
+          >
+            <img
+              src="https://i.postimg.cc/h4mj06Hz/EE48A34E_5219_4E9B_B810_4D3FB381562F.jpg"
+              class="w-full h-full object-cover"
+            />
+          </div>
+
+          <div
+            class="gallery-item gazebo block h-72 bg-slate-200 rounded-xl overflow-hidden shadow-md"
+          >
+            <img
+              src="https://i.postimg.cc/15L3y7gH/6a5ebbc491a51581955b60a34f586696.jpg"
+              class="w-full h-full object-cover"
+            />
+          </div>
+
+          <div
+            class="gallery-item gazebo block h-72 bg-slate-200 rounded-xl overflow-hidden shadow-md"
+          >
+            <img
+              src="https://i.postimg.cc/fyYRTScs/2A786D6F_CAED_4517_9103_5CFB9FB0AB97.png"
+              class="w-full h-full object-cover"
+            />
+          </div>
+
+          <div
+            class="gallery-item gazebo block h-72 bg-slate-200 rounded-xl overflow-hidden shadow-md"
+          >
+            <img
+              src="https://i.postimg.cc/6pLrJnL7/r35Z_4Gv.jpg"
+              class="w-full h-full object-cover"
+            />
+          </div>
+          <div
+            class="gallery-item gazebo block h-72 bg-slate-200 rounded-xl overflow-hidden shadow-md"
+          >
+            <img
+              src="https://i.postimg.cc/sg62h23b/IMG_8202_2.png"
+              class="w-full h-full object-cover"
+            />
+          </div>
+
+          <div
+            class="gallery-item gazebo block h-72 bg-slate-200 rounded-xl overflow-hidden shadow-md"
+          >
+            <img
+              src="https://i.postimg.cc/xdrRZW6s/b4b02079_9169_4fee_9209_d8fb321dd906.png"
+              class="w-full h-full object-cover"
+            />
+          </div>
+
+          <div
+            class="gallery-item gazebo block h-72 bg-slate-200 rounded-xl overflow-hidden shadow-md"
+          >
+            <img
+              src="https://i.postimg.cc/BvWgzdmp/small_g_1.png"
+              class="w-full h-full object-cover"
+            />
+          </div>
+
+          <div
+            class="gallery-item gazebo block h-72 bg-slate-200 rounded-xl overflow-hidden shadow-md"
+          >
+            <img
+              src="https://i.postimg.cc/YSc3PJd8/small_g_2.png"
+              class="w-full h-full object-cover"
+            />
+          </div>
+
+          <!--------------- Others -------------------->
+          <div
+            class="gallery-item others block h-72 bg-slate-200 rounded-xl overflow-hidden shadow-md"
+          >
+            <img
+              src="https://i.postimg.cc/13Czqzyd/IMG_8229_2.png"
+              class="w-full h-full object-cover"
+            />
+          </div>
+
+          <div
+            class="gallery-item others block h-72 bg-slate-200 rounded-xl overflow-hidden shadow-md"
+          >
+            <img
+              src="https://i.postimg.cc/VknLv9Mn/7c770ec7f5cc9feebbe6e58abfb32b6b-2.jpg"
+              class="w-full h-full object-cover"
+            />
+          </div>
+
+          <div
+            class="gallery-item others block h-72 bg-slate-200 rounded-xl overflow-hidden shadow-md"
+          >
+            <img
+              src="https://i.postimg.cc/ZRszq051/589015261_1473202038147337_6705379251923629081_n.jpg"
+              class="w-full h-full object-cover"
+            />
+          </div>
+
+          <div
+            class="gallery-item others block h-72 bg-slate-200 rounded-xl overflow-hidden shadow-md"
+          >
+            <img
+              src="https://i.postimg.cc/y8cYxhcq/35f74507d5e95f32b84521a126123c67.jpg"
+              class="w-full h-full object-cover"
+            />
+          </div>
+
+          <div
+            class="gallery-item others block h-72 bg-slate-200 rounded-xl overflow-hidden shadow-md"
+          >
+            <img
+              src="https://i.postimg.cc/wvBn7PnW/2.png"
+              class="w-full h-full object-cover"
+            />
+          </div>
+
+          <div
+            class="gallery-item others block h-72 bg-slate-200 rounded-xl overflow-hidden shadow-md"
+          >
+            <img
+              src="https://i.postimg.cc/k45LBZLx/5.png"
+              class="w-full h-full object-cover"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!--------------- Location -------------------->
+
+    <section id="location" class="py-24 bg-white">
+      <div class="max-w-6xl mx-auto px-6">
+        <div class="flex flex-row flex-nowrap items-stretch gap-8 lg:gap-16">
+          <div class="lg:w-1/2 space-y-6">
+            <div
+              class="inline-block bg-blue-50 text-blue-600 text-[10px] font-bold px-4 py-1 rounded-full uppercase tracking-tighter mb-2"
+            >
+              Our Location
+            </div>
+            <h3 class="text-4xl font-serif italic text-[#0f172a] leading-tight">
+              Visit Casa Cinderella
+            </h3>
+
+            <div class="bg-slate-50 p-6 border-l-4 border-blue-600 shadow-sm">
+              <p class="text-lg text-[#0f172a] font-bold mb-1">
+                98 Garville Subd, Brgy. Lugam
+              </p>
+              <p class="text-slate-600 font-medium">
+                Malolos, Bulacan, Philippines
+              </p>
+            </div>
+
+            <p class="text-slate-500 leading-relaxed max-w-md">
+              Nestled in a peaceful, private neighborhood in Malolos, our resort
+              offers the perfect quick escape without the long drive. We are
+              easily accessible via major roads and offer secure parking.
             </p>
 
-            <div class="inline-flex items-center gap-2 text-[#0f172a] font-bold text-[10px] uppercase tracking-widest border-b border-[#0f172a] pb-1 cursor-help hover:text-blue-600 hover:border-blue-600 transition-all">
-                <i class="fas fa-info-circle text-blue-600"></i> Inquire for specific room rates
+            <div class="pt-4">
+              <a
+                href="https://www.google.com/maps/search/?api=1&query=Casa+Cinderella+Malolos+Bulacan"
+                target="_blank"
+                class="inline-flex items-center gap-3 bg-[#0f172a] text-white px-10 py-4 rounded-full text-[11px] font-bold uppercase tracking-widest hover:bg-blue-600 transition-all shadow-lg hover:shadow-blue-200"
+              >
+                <i class="fas fa-location-dot"></i> Get Directions
+              </a>
             </div>
-        </div>
+          </div>
 
-    </div>
-</div>
+          <div class="lg:w-1/2 w-full group">
+            <div
+              class="relative h-[400px] w-full rounded-[2rem] overflow-hidden shadow-2xl transition-transform duration-500 group-hover:scale-[1.02]"
+            >
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3856.811808076043!2d120.816666!3d14.85!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3396522c00000001%3A0x0!2zMTTCsDUxJzAwLjAiTiAxMjDCsDQ5JzAwLjAiRQ!5e0!3m2!1sen!2sph!4v1700000000000"
+                width="100%"
+                height="100%"
+                style="border: 0"
+                allowfullscreen=""
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
+                class="grayscale-[20%] group-hover:grayscale-0 transition-all duration-700"
+              >
+              </iframe>
 
-
-<!--------------- resort gallery -------------------->
-
-<section id="gallery" class="py-20 bg-white px-6">
-
-<div class="max-w-6xl mx-auto">
-<h3 class="text-3xl font-md text-[#0f172a] text-center mb-12 uppercase tracking-widest">Resort Gallery</h3>
-<div class="flex flex-wrap justify-center gap-3 mb-10">
-
-<button onclick="filterGallery('all')" class="g-btn bg-[#0f172a] text-white px-6 py-2 rounded-full text-[10px] font-bold uppercase transition">All</button>
-
-<button onclick="filterGallery('pool')" class="g-btn bg-slate-100 px-6 py-2 rounded-full text-[10px] font-medium uppercase transition">Pool Area</button>
-
-<button onclick="filterGallery('room')" class="g-btn bg-slate-100 px-6 py-2 rounded-full text-[10px] font-bold uppercase transition">Guest Room</button>
-
-<button onclick="filterGallery('coupleroom')" class="g-btn bg-slate-100 px-6 py-2 rounded-full text-[10px] font-bold uppercase transition">Couple Rooms</button>
-
-<button onclick="filterGallery('parking')" class="g-btn bg-slate-100 px-6 py-2 rounded-full text-[10px] font-bold uppercase transition">Parking Area</button>
-
-<button onclick="filterGallery('gazebo')" class="g-btn bg-slate-100 px-6 py-2 rounded-full text-[10px] font-bold uppercase transition">Gazebos</button>
-
-<button onclick="filterGallery('others')" class="g-btn bg-slate-100 px-6 py-2 rounded-full text-[10px] font-bold uppercase transition">Others</button>
-</div>
-
-
-<!--------------- Pool Area -------------------->
-
-<div class="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-    <div class="gallery-item pool block h-72 bg-slate-200 rounded-xl overflow-hidden shadow-md">
-        <img src="https://i.postimg.cc/ZKvDrWCj/1d3dae9ca95228b0df542be7c1a1980e.jpg" class="w-full h-full object-cover">
-    </div>
-    <div class="gallery-item pool block h-72 bg-slate-200 rounded-xl overflow-hidden shadow-md">
-        <img src="https://i.postimg.cc/Nfkb639r/IMG_8199_2.png" class="w-full h-full object-cover">
-    </div>
-    <div class="gallery-item pool block h-72 bg-slate-200 rounded-xl overflow-hidden shadow-md">
-        <img src="https://i.postimg.cc/3wScgPqb/IMG_8226_2.png" class="w-full h-full object-cover">
-    </div>
-    <div class="gallery-item pool block h-72 bg-slate-200 rounded-xl overflow-hidden shadow-md">
-        <img src="https://i.postimg.cc/nLxVDsGt/b59f000c5a9a8d1e63601227ba8b9499.jpg" class="w-full h-full object-cover">
-    </div>
-    <div class="gallery-item pool block h-72 bg-slate-200 rounded-xl overflow-hidden shadow-md">
-        <img src="https://i.postimg.cc/wMSRKTGL/IMG_8266_2.png" class="w-full h-full object-cover">
-    </div>
-    <div class="gallery-item pool block h-72 bg-slate-200 rounded-xl overflow-hidden shadow-md">
-        <img src="https://i.postimg.cc/c1hGHbxb/IMG_8204_2.png" class="w-full h-full object-cover">
-    </div>
-    
-    
-    <div class="gallery-item pool block h-72 bg-slate-200 rounded-xl overflow-hidden shadow-md">
-        <img src="https://i.postimg.cc/7YpZqtCg/1f45454daa92c9a4d89d27e071e470e6.jpg" class="w-full h-full object-cover">
-    </div>
-    <div class="gallery-item pool block h-72 bg-slate-200 rounded-xl overflow-hidden shadow-md">
-        <img src="https://i.postimg.cc/d0FQy7jV/db01bf2b88fe1347bb35e74d1d4140ce.jpg" class="w-full h-full object-cover">
-    </div>
-    
-    <!--------------- Guest Room -------------------->
-    
-    <div class="gallery-item room block h-72 bg-slate-200 rounded-xl overflow-hidden shadow-md">
-    <img src="https://i.postimg.cc/B6vG3TrN/796d998602ae5f030185c220208da79c.jpg" class="w-full h-full object-cover">
-</div>
-
-    <div class="gallery-item room block h-72 bg-slate-200 rounded-xl overflow-hidden shadow-md">
-    <img src="https://i.postimg.cc/ZYght9gx/6689d253a98a411127283f15cba983b3.jpg" class="w-full h-full object-cover">
-</div>
-
-    <div class="gallery-item room block h-72 bg-slate-200 rounded-xl overflow-hidden shadow-md">
-    <img src="https://i.postimg.cc/9QH506cQ/8327547f6e87d7c11ddcb170583c7935.jpg" class="w-full h-full object-cover">
-</div>
-
-<div class="gallery-item room block h-72 bg-slate-200 rounded-xl overflow-hidden shadow-md">
-    <img src="https://i.postimg.cc/rmpLT1Bj/ba7ac7fed41f5360e46a429ecbd87d79.jpg" class="w-full h-full object-cover">
-</div>
-
-<div class="gallery-item room block h-72 bg-slate-200 rounded-xl overflow-hidden shadow-md">
-    <img src="https://i.postimg.cc/KYm6rtk3/ece084c9f97bbae2b035ca9b23814951.jpg" class="w-full h-full object-cover">
-</div>
-
-<div class="gallery-item room block h-72 bg-slate-200 rounded-xl overflow-hidden shadow-md">
-    <img src="https://i.postimg.cc/50tMJBhs/e46559dd2fcf56d68e36929d023f6b14.jpg" class="w-full h-full object-cover">
-</div>
-<div class="gallery-item room block h-72 bg-slate-200 rounded-xl overflow-hidden shadow-md">
-    <img src="https://i.postimg.cc/rmpLT1Bh/449edb48c321ba64ab5ed0c1318a1a5e.jpg" class="w-full h-full object-cover">
-</div>
-
-<div class="gallery-item room block h-72 bg-slate-200 rounded-xl overflow-hidden shadow-md">
-    <img src="https://i.postimg.cc/wjfBmB6g/IMG_8246_2.png" class="w-full h-full object-cover">
-</div>
-
-<div class="gallery-item room block h-72 bg-slate-200 rounded-xl overflow-hidden shadow-md">
-    <img src="https://i.postimg.cc/CxPKqKF0/IMG_8243_2.png" class="w-full h-full object-cover">
-</div>
-<div class="gallery-item room block h-72 bg-slate-200 rounded-xl overflow-hidden shadow-md">
-    <img src="https://i.postimg.cc/nhBcrK7T/8a4f466ab245085c9db1cad64afac210.jpg" class="w-full h-full object-cover">
-</div>
-
-  <!--------------- Couple Room -------------------->
-  
-
-  <div class="gallery-item coupleroom block h-72 bg-slate-200 rounded-xl overflow-hidden shadow-md">
-    <img src="https://i.postimg.cc/jWhvcgL9/att-k4c3C9x-JLi-YRl90xn-M4y7U0y15GMXFPsz1yw61w-Iew.jpg" class="w-full h-full object-cover">
-</div>
-
-  <div class="gallery-item coupleroom block h-72 bg-slate-200 rounded-xl overflow-hidden shadow-md">
-    <img src="https://i.postimg.cc/v1vXhqcK/att-ny-LKBbw-Agex-T5Ly-JLe-Nag-O5SGv-L1Cmk-VNeo-QOq7z3LE.jpg" class="w-full h-full object-cover">
-</div>
-
-  <div class="gallery-item coupleroom block h-72 bg-slate-200 rounded-xl overflow-hidden shadow-md">
-    <img src="https://i.postimg.cc/TLY04VD9/att-p-KVEs83e-Ped8S2u-MGzed-K8g-PHl9g-Yep-Pn-VJF2Oo-M4c.jpg" class="w-full h-full object-cover">
-</div>
-
-  <div class="gallery-item coupleroom block h-72 bg-slate-200 rounded-xl overflow-hidden shadow-md">
-    <img src="https://i.postimg.cc/CBL7QGqc/att-p-WC7Ff-FS8fm2Fv6z-Y9-h1HTEaecfzp4PMp-Lp-SNi-Hd-Wk.jpg" class="w-full h-full object-cover">
-</div>
-
-  <div class="gallery-item coupleroom block h-72 bg-slate-200 rounded-xl overflow-hidden shadow-md">
-    <img src="https://i.postimg.cc/sQDmNYh0/att-p-Z2Dax-Bs-ANCFuzt-Rlr1pjlc-KH1Bw-Uk3Akygr-Lvn7X8g.jpg" class="w-full h-full object-cover">
-</div>
-
-  <div class="gallery-item coupleroom block h-72 bg-slate-200 rounded-xl overflow-hidden shadow-md">
-    <img src="https://i.postimg.cc/Z9LjH7CM/att-Har-K7BL54zm1Inw-Thg7Bi8ny6er-Wi-Co-D3WOj6e9Dt0s.jpg" class="w-full h-full object-cover">
-</div>
-
-
-  <!--------------- Parking Area -------------------->
-  
-<div class="gallery-item parking block h-72 bg-slate-200 rounded-xl overflow-hidden shadow-md">
-    <img src="https://i.postimg.cc/gkcG2Cfv/IMG_8271_3.png" class="w-full h-full object-cover">
-</div>
-
-    <!--------------- Gazebos -------------------->
-    
-<div class="gallery-item gazebo block h-72 bg-slate-200 rounded-xl overflow-hidden shadow-md">
-    <img src="https://i.postimg.cc/d0FQy7jq/d732908b49ab814c4cb3f5925a458b93.jpg" class="w-full h-full object-cover">
-</div>
-<div class="gallery-item gazebo block h-72 bg-slate-200 rounded-xl overflow-hidden shadow-md">
-    <img src="https://i.postimg.cc/15L3y7gH/6a5ebbc491a51581955b60a34f586696.jpg" class="w-full h-full object-cover">
-</div>
-<div class="gallery-item gazebo block h-72 bg-slate-200 rounded-xl overflow-hidden shadow-md">
-    <img src="https://i.postimg.cc/6pLrJnL7/r35Z_4Gv.jpg" class="w-full h-full object-cover">
-</div>
-<div class="gallery-item gazebo block h-72 bg-slate-200 rounded-xl overflow-hidden shadow-md">
-    <img src="https://i.postimg.cc/sg62h23b/IMG_8202_2.png" class="w-full h-full object-cover">
-</div>
-
-    
- <!--------------- Others -------------------->
-<div class="gallery-item others block h-72 bg-slate-200 rounded-xl overflow-hidden shadow-md">
-    <img src="https://i.postimg.cc/13Czqzyd/IMG_8229_2.png" class="w-full h-full object-cover">
-</div>
-
-<div class="gallery-item others block h-72 bg-slate-200 rounded-xl overflow-hidden shadow-md">
-    <img src="https://i.postimg.cc/VknLv9Mn/7c770ec7f5cc9feebbe6e58abfb32b6b-2.jpg" class="w-full h-full object-cover">
-</div>
-
-<div class="gallery-item others block h-72 bg-slate-200 rounded-xl overflow-hidden shadow-md">
-    <img src="https://i.postimg.cc/ZRszq051/589015261_1473202038147337_6705379251923629081_n.jpg" class="w-full h-full object-cover">
-</div>
-
-<div class="gallery-item others block h-72 bg-slate-200 rounded-xl overflow-hidden shadow-md">
-    <img src="https://i.postimg.cc/y8cYxhcq/35f74507d5e95f32b84521a126123c67.jpg" class="w-full h-full object-cover">
-</div>
-
-
-     
-    </div>
-
-        </div>
-        
-        
-       
-</section>
-
-    
-
-
-<!--------------- Location -------------------->
-
-<section id="location" class="py-24 bg-white">
-    <div class="max-w-6xl mx-auto px-6">
-        <div class="flex flex-row flex-nowrap items-stretch gap-8 lg:gap-16">
-            
-            <div class="lg:w-1/2 space-y-6">
-                <div class="inline-block bg-blue-50 text-blue-600 text-[10px] font-bold px-4 py-1 rounded-full uppercase tracking-tighter mb-2">
-                    Our Location
-                </div>
-                <h3 class="text-4xl font-serif italic text-[#0f172a] leading-tight">Visit Casa Cinderella</h3>
-                
-                <div class="bg-slate-50 p-6  border-l-4 border-blue-600 shadow-sm">
-                    <p class="text-lg text-[#0f172a] font-bold mb-1">98 Garville Subd, Brgy. Lugam</p>
-                    <p class="text-slate-600 font-medium">Malolos, Bulacan, Philippines</p>
-                </div>
-
-                <p class="text-slate-500 leading-relaxed max-w-md">
-                    Nestled in a peaceful, private neighborhood in Malolos, our resort offers the perfect quick escape without the long drive. We are easily accessible via major roads and offer secure parking.
+              <div
+                class="absolute bottom-6 right-6 bg-white/90 backdrop-blur-md px-4 py-2 rounded-xl shadow-md border border-white/20"
+              >
+                <p
+                  class="text-[10px] font-bold text-[#0f172a] uppercase tracking-tighter"
+                >
+                  Private Compound
                 </p>
-
-                <div class="pt-4">
-                    <a href="https://www.google.com/maps/search/?api=1&query=Casa+Cinderella+Malolos+Bulacan" 
-                       target="_blank" 
-                       class="inline-flex items-center gap-3 bg-[#0f172a] text-white px-10 py-4 rounded-full text-[11px] font-bold uppercase tracking-widest hover:bg-blue-600 transition-all shadow-lg hover:shadow-blue-200">
-                        <i class="fas fa-location-dot"></i> Get Directions
-                    </a>
-                </div>
+              </div>
             </div>
-
-            <div class="lg:w-1/2 w-full group">
-                <div class="relative h-[400px] w-full rounded-[2rem] overflow-hidden shadow-2xl transition-transform duration-500 group-hover:scale-[1.02]">
-                    <iframe 
-                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3856.811808076043!2d120.816666!3d14.85!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3396522c00000001%3A0x0!2zMTTCsDUxJzAwLjAiTiAxMjDCsDQ5JzAwLjAiRQ!5e0!3m2!1sen!2sph!4v1700000000000" 
-                        width="100%" 
-                        height="100%" 
-                        style="border:0;" 
-                        allowfullscreen="" 
-                        loading="lazy" 
-                        referrerpolicy="no-referrer-when-downgrade"
-                        class="grayscale-[20%] group-hover:grayscale-0 transition-all duration-700">
-                    </iframe>
-                    
-                    <div class="absolute bottom-6 right-6 bg-white/90 backdrop-blur-md px-4 py-2 rounded-xl shadow-md border border-white/20">
-                        <p class="text-[10px] font-bold text-[#0f172a] uppercase tracking-tighter">Private Compound</p>
-                    </div>
-                </div>
-            </div>
-
+          </div>
         </div>
-    </div>
-</section>
-    
-    
-<!--------------- calendar -------------------->
+      </div>
+    </section>
 
+    <!--------------- calendar -------------------->
 
-                    
-                    <section id="availability" class="py-20 bg-slate-50">
-    <div class="max-w-5xl mx-auto px-6">
+    <section id="availability" class="py-20 bg-slate-50">
+      <div class="max-w-5xl mx-auto px-6">
         <div class="text-center mb-12">
-            <h3 class="text-3xl font-serif italic text-[#0f172a] mb-2">Check Availability</h3>
-            <p class="text-[9px] tracking-[0.4em] uppercase text-blue-600 font-black">Live Booking Calendar</p>
+          <h3 class="text-3xl font-serif italic text-[#0f172a] mb-2">
+            Check Availability
+          </h3>
+          <p
+            class="text-[9px] tracking-[0.4em] uppercase text-blue-600 font-black"
+          >
+            Live Booking Calendar
+          </p>
         </div>
 
-<div class="max-w-5xl mx-auto px-4">
-    <div class="relative bg-white/40 backdrop-blur-md rounded-[2.5rem] p-4 shadow-2xl border border-white/50 overflow-hidden group">
-        
-        <div class="flex items-center justify-between px-6 pb-4 border-b border-slate-200/50 mb-4">
-            <div class="flex items-center gap-2">
+        <div class="max-w-5xl mx-auto px-4">
+          <div
+            class="relative bg-white/40 backdrop-blur-md rounded-[2.5rem] p-4 shadow-2xl border border-white/50 overflow-hidden group"
+          >
+            <div
+              class="flex items-center justify-between px-6 pb-4 border-b border-slate-200/50 mb-4"
+            >
+              <div class="flex items-center gap-2">
                 <div class="w-3 h-3 bg-red-400 rounded-full"></div>
                 <div class="w-3 h-3 bg-amber-400 rounded-full"></div>
                 <div class="w-3 h-3 bg-green-400 rounded-full"></div>
-            </div>
-            <p class="text-[10px] font-bold uppercase tracking-[0.2em] text-slate-400">Best viewed on desktop</p>
-        </div>
-
-        <div class="h-[500px] md:h-[650px] rounded-2xl overflow-hidden border border-slate-100 shadow-inner bg-white">
-            <iframe 
-                src="https://calendar.google.com/calendar/embed?src=casacinderella.resort%40gmail.com&ctz=Asia%2FManila&showTitle=0&showNav=1&showPrint=0&showTabs=0&showCalendars=0&showTz=0&wkst=1&bgcolor=%23ffffff&color=%230f172a" 
-                style="border: 0" 
-                width="100%" 
-                height="100%" 
-                frameborder="0" 
-                scrolling="no">
-            </iframe>
-        </div>
-    </div>
-</div>
-        
-    </div>
-</section>
-    
-    
-<!--------------- ready to book? -------------------->
-
-<section id="book" class="py-20 bg-[#0f172a] text-white text-center px-6"> <h3 class="text-4xl font-serif mb-6 italic tracking-wide">Ready to Book?</h3>
-
-<p class="max-w-2xl mx-auto mb-12 text-slate-400 rounded-full font-md uppercase text-[10px] tracking-widest">Please contact us via Messenger to check availability.</p>
-
-<div class="flex flex-wrap justify-center gap-6 mb-12">
-
-<div class="flex items-center space-x-2"><i class="fas fa-wallet text-blue-400"></i> <span class="uppercase tracking-widest text-sm">Gcash</span></div>
-
-<div class="flex items-center space-x-2"><i class="fas fa-university text-blue-400"></i> <span class="uppercase tracking-widest text-sm">Bank Transfer</span></div> </div>
-
-     <div class="max-w-2xl mx-auto">
-            <div class="flex items-center justify-center gap-4 m-10">
-                <i class="fas fa-info-circle text-red-600"></i>
-                <p class="text-[11px] font-medium text-white uppercase tracking-widest">
-                    50% downpayment required to secure your slot
-                </p>
+              </div>
+              <p
+                class="text-[10px] font-bold uppercase tracking-[0.2em] text-slate-400"
+              >
+                Best viewed on desktop
+              </p>
             </div>
 
-  <div class="flex flex-col sm:flex-row justify-center items-center gap-4 md:gap-6">
-            
-            <a href="https://m.me/casacinderella" target="_blank" 
-               class="w-full sm:w-auto bg-blue-600 hover:bg-blue-500 text-white px-10 py-4 rounded-full font-bold uppercase text-[10px] tracking-widest transition-all shadow-xl inline-flex items-center justify-center gap-3">
-                <i class="fab fa-facebook-messenger text-lg"></i>
-                Inquire via Messenger
-            </a>
-
-            <a href="https://instagram.com/YOUR_HANDLE" target="_blank" 
-               class="w-full sm:w-auto bg-gradient-to-tr from-[#f09433] via-[#dc2743] to-[#bc1888] text-white px-10 py-4 rounded-full font-bold uppercase text-[10px] tracking-widest transition-all shadow-xl hover:opacity-90 inline-flex items-center justify-center gap-3">
-                <i class="fab fa-instagram text-lg"></i>
-                Follow us on Instagram
-            </a>
-            
+            <div
+              class="h-[500px] md:h-[650px] rounded-2xl overflow-hidden border border-slate-100 shadow-inner bg-white"
+            >
+              <iframe
+                src="https://calendar.google.com/calendar/embed?src=casacinderella.resort%40gmail.com&ctz=Asia%2FManila&showTitle=0&showNav=1&showPrint=0&showTabs=0&showCalendars=0&showTz=0&wkst=1&bgcolor=%23ffffff&color=%230f172a"
+                style="border: 0"
+                width="100%"
+                height="100%"
+                frameborder="0"
+                scrolling="no"
+              >
+              </iframe>
+            </div>
+          </div>
         </div>
-    </div>
-</section>
+      </div>
+    </section>
 
-<!--------------- footer -------------------->
+    <!--------------- ready to book? -------------------->
 
-    <footer class="bg-[#1f2937] text-slate-500 py-10 text-center text-[8px] uppercase tracking-[0.4em]">
-        &copy; 2014 Casa Cinderella Private Resort. All Rights Reserved.
+    <section id="book" class="py-20 bg-[#0f172a] text-white text-center px-6">
+      <h3 class="text-4xl font-serif mb-6 italic tracking-wide">
+        Ready to Book?
+      </h3>
+
+      <p
+        class="max-w-2xl mx-auto mb-12 text-slate-400 rounded-full font-md uppercase text-[10px] tracking-widest"
+      >
+        Please contact us via Messenger to check availability.
+      </p>
+
+      <div class="flex flex-wrap justify-center gap-6 mb-12">
+        <div class="flex items-center space-x-2">
+          <i class="fas fa-wallet text-blue-400"></i>
+          <span class="uppercase tracking-widest text-sm">Gcash</span>
+        </div>
+
+        <div class="flex items-center space-x-2">
+          <i class="fas fa-university text-blue-400"></i>
+          <span class="uppercase tracking-widest text-sm">Bank Transfer</span>
+        </div>
+      </div>
+
+      <div class="max-w-2xl mx-auto">
+        <div class="flex items-center justify-center gap-4 m-10">
+          <i class="fas fa-info-circle text-red-600"></i>
+          <p
+            class="text-[11px] font-medium text-white uppercase tracking-widest"
+          >
+            50% downpayment required to secure your slot
+          </p>
+        </div>
+
+        <div
+          class="flex flex-col sm:flex-row justify-center items-center gap-4 md:gap-6"
+        >
+          <a
+            href="https://m.me/casacinderella"
+            target="_blank"
+            class="w-full sm:w-auto bg-blue-600 hover:bg-blue-500 text-white px-10 py-4 rounded-full font-bold uppercase text-[10px] tracking-widest transition-all shadow-xl inline-flex items-center justify-center gap-3"
+          >
+            <i class="fab fa-facebook-messenger text-lg"></i>
+            Inquire via Messenger
+          </a>
+
+          <a
+            href="https://instagram.com/YOUR_HANDLE"
+            target="_blank"
+            class="w-full sm:w-auto bg-gradient-to-tr from-[#f09433] via-[#dc2743] to-[#bc1888] text-white px-10 py-4 rounded-full font-bold uppercase text-[10px] tracking-widest transition-all shadow-xl hover:opacity-90 inline-flex items-center justify-center gap-3"
+          >
+            <i class="fab fa-instagram text-lg"></i>
+            Follow us on Instagram
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!--------------- footer -------------------->
+
+    <footer
+      class="bg-[#1f2937] text-slate-500 py-10 text-center text-[8px] uppercase tracking-[0.4em]"
+    >
+      &copy; 2014 Casa Cinderella Private Resort. All Rights Reserved.
     </footer>
 
-    <a href="https://www.facebook.com/casacinderella" target="_blank" class="fixed bottom-6 right-6 bg-[#0084FF] text-white p-4 rounded-full shadow-2xl hover:scale-110 transition-all z-50">
-        <i class="fab fa-facebook-messenger text-3xl"></i>
+    <a
+      href="https://www.facebook.com/casacinderella"
+      target="_blank"
+      class="fixed bottom-6 right-6 bg-[#0084FF] text-white p-4 rounded-full shadow-2xl hover:scale-110 transition-all z-50"
+    >
+      <i class="fab fa-facebook-messenger text-3xl"></i>
     </a>
 
-
     <script>
-        function filterGallery(category) {
-            const items = document.querySelectorAll('.gallery-item');
-            const btns = document.querySelectorAll('.g-btn');
+      function filterGallery(category) {
+        const items = document.querySelectorAll(".gallery-item");
+        const btns = document.querySelectorAll(".g-btn");
 
-            // 1. Reset Buttons
-            btns.forEach(btn => {
-                btn.classList.remove('bg-[#0f172a]', 'text-white');
-                btn.classList.add('bg-slate-100', 'text-slate-900');
-            });
+        // 1. Reset Buttons
+        btns.forEach((btn) => {
+          btn.classList.remove("bg-[#0f172a]", "text-white");
+          btn.classList.add("bg-slate-100", "text-slate-900");
+        });
 
-            // 2. Set Active Button
-            event.currentTarget.classList.remove('bg-slate-100', 'text-slate-900');
-            event.currentTarget.classList.add('bg-[#0f172a]', 'text-white');
+        // 2. Set Active Button
+        event.currentTarget.classList.remove("bg-slate-100", "text-slate-900");
+        event.currentTarget.classList.add("bg-[#0f172a]", "text-white");
 
-            // 3. Filter Items with Animation
-            items.forEach(item => {
-                item.classList.remove('fade-in'); // Reset animation
-                
-                if (category === 'all' || item.classList.contains(category)) {
-                    item.style.display = 'block';
-                    // Trigger reflow to restart animation
-                    void item.offsetWidth; 
-                    item.classList.add('fade-in');
-                } else {
-                    item.style.display = 'none';
-                }
-            });
-        }
+        // 3. Filter Items with Animation
+        items.forEach((item) => {
+          item.classList.remove("fade-in"); // Reset animation
+
+          if (category === "all" || item.classList.contains(category)) {
+            item.style.display = "block";
+            // Trigger reflow to restart animation
+            void item.offsetWidth;
+            item.classList.add("fade-in");
+          } else {
+            item.style.display = "none";
+          }
+        });
+      }
     </script>
-</body>
+  </body>
 </html>
